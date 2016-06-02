@@ -33,32 +33,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .-h1 {
-	font-size: $font-size-xxl;
 	font-weight: $font-weight-bold;
 }
 
 h2, .-h2 {
-	font-size: $font-size-xl;
+	font-size: $font-size-lg;
 	font-weight: $font-weight-bold;
 }
 
 h3, .-h3 {
 	font-size: $font-size-lg;
-	font-weight: $font-weight-bold;
-}
-
-h4, .-h4 {
-	font-size: $font-size-lg;
-	font-weight: $font-weight-semibold;
-}
-
-h5, .-h5 {
-	font-size: $font-size-md;
-	font-weight: $font-weight-regular;
-}
-
-h6, .-h6 {
-	font-size: $font-size-sm;
 	font-weight: $font-weight-bold;
 }
 

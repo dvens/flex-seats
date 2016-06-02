@@ -5,13 +5,11 @@ $grid-gutter-width: 40px;
 // Fonts
 $font-folder: '/fonts/'; // Needed for font-face mixin
 
-$font-size-xs: 12px;
-$font-size-sm: 14px;
+$font-size-xs: 0.75em;
+$font-size-sm: 0.875em;
 $font-size-md: 1em;
-$font-size-lg: 23px;
-$font-size-xl: 26px;
-$font-size-xxl: 32px;
-$font-size-xxxl: 48px;
+$font-size-lg: 1.125em;
+$font-size-xl: 1.3125em;
 $font-size-full: 100%;
 
 $font-weight-light: 300;
@@ -22,26 +20,17 @@ $font-weight-extrabold: 800;
 
 
 // Colors
-$color-background: #f0f2f4;
+$color-background: #F7F7F7;
 $color-white: #ffffff;
-$color-gray-light: #979797;
+$color-gray-light: #E2E1E1;
 $color-gray: #737373;
-$color-gray-dark: #272727;
-$color-gray-darkest: #404040;
+$color-gray-dark: #393939;
 $color-black: #000000;
-$color-red: #cc1500;
-$color-red-dark: #a70f00;
-$color-orange: #f7941c;
-$color-orange-dark: #dd841a;
-$color-green: #22c064;
-$color-green-dark: #1eac59;
-$color-blue-light: #88cce5;
-$color-blue: #129acc;
-$color-blue-dark: #0e84af;
+$color-red: #E04141;
+$color-green: #54AB42;
+$color-blue: #31A5E0;
+$color-blue-dark: #2395CC;
 $color-blue-darkest: #00769D;
-$color-bluegray: #707f95;
-$color-bluegray-dark: #354a58;
-$color-bluegray-light: #c5c9d3;
 
 // Transforms
 $font-uppercase: uppercase;

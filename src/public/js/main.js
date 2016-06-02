@@ -1,6 +1,6 @@
 var ExampleClass = require('./modules/ExampleClass');
 
-console.log('main is initialized!');
+console.log('main is initializedsssss!');
 
 var main = new Main();
 main.init();

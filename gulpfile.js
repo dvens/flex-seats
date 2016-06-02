@@ -18,7 +18,7 @@ tasklist.forEach(function(taskfile) {
 gulp.task('build', ['clean'], function() {
 
 	return runSequence(
-		['html', 'css', 'images','fonts'],
+		['php','css', 'images','fonts'],
 		['misc:copy'],
 		'browserify'
 	);
@@ -30,7 +30,7 @@ gulp.task('dist', ['clean'], function() {
 	config.base = config.dist;
 
 	return runSequence(
-		['html', 'css', 'images','fonts'],
+		['php','css', 'images','fonts'],
 		['misc:copy'],
 		'browserify',
 		'minifyhtml'
@@ -41,7 +41,7 @@ gulp.task('dist', ['clean'], function() {
 gulp.task('server', ['clean'], function() {
 
 	return runSequence(
-		['html', 'css', 'images', 'fonts'],
+		['php','css', 'images', 'fonts'],
 		['misc:copy',],
 		'browserify',
 		'browser-sync',

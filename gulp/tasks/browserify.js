@@ -7,7 +7,7 @@ module.exports = function (gulp, $, config) {
    gulp.task('browserify', function() {
        	
        	// Single entry point to browserify 
-      	return gulp.src('./src/js/main.js')
+      	return gulp.src('./src/public/js/main.js')
       		.pipe($.plumber({
                 errorHandler: config.error
             }))

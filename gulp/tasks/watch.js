@@ -7,7 +7,7 @@ module.exports = function (gulp, $, config) {
 
     gulp.task('watch', function() {
 
-        gulp.watch(config.html.watch, ['html', reload]);
+        gulp.watch(config.php.watch, ['php', reload]);
         gulp.watch(config.css.watch, ['css']);
         gulp.watch(config.js.watch, ['browserify', reload]);
         gulp.watch(config.images.watch, ['images', reload]);

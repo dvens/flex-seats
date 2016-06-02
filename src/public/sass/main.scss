@@ -10,8 +10,10 @@
 
 // elements
 @import 'elements/buttons';
-@import 'elements/modifiers';
 
 // layout elements
 @import 'layout/main';
-@import 'layout/footer';
+
+// modules footer
+@import 'modules/footer';
+@import 'modules/header';
