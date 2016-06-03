@@ -8,10 +8,9 @@
 		</h1>
 		
 		<input type="checkbox" class="header__navigation-status" id="navigation">
+		<label for="navigation" class="header__navigation-toggle"></label>
 
 		<nav class="header__navigation">
-			
-			<label for="navigation" class="header__navigation-toggle"></label>
 
 			<ul>
 				<li><a href="/">Home</a></li>
@@ -24,9 +23,5 @@
 		</nav>
 
 	</div>
-
-	<section class="header__content">
-		<h2>Home</h2>
-	</section>
 
 </header>

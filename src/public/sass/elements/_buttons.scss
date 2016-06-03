@@ -1,3 +1,14 @@
-.button {
+.button,
+button {
 
+}
+
+.button__holder {
+
+}
+
+.button__holder--title {
+	font-weight: $font-weight-bold;
+	font-size: 1em;
+	text-transform: uppercase;
 }

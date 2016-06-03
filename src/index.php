@@ -1,12 +1,12 @@
 <?php 
-	require("includes/app/functions.php");
-	include("includes/_base/head.php");
+	require("app/core/functions.php");
+	include("app/_base/head.php");
 ?>
 
-<?php include("includes/_base/header.php"); ?>
+<?php include("app/_base/header.php"); ?>
 
 	<main>
-		<?php  loadView(); ?>
+		<?php loadView(); ?>
 	</main> <!-- end main -->
 
-<?php include("includes/_base/footer.php"); ?>
+<?php include("app/_base/footer.php"); ?>

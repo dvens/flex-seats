@@ -1,0 +1,153 @@
+.calendar {
+	
+}
+
+	.calendar__month-picker {
+		align-items: center;
+		background-color: $color-blue-dark;
+		color: $color-white;
+		display: flex;
+		height: 2.2em;
+		justify-content: space-between;
+		text-transform: uppercase;
+		padding: 0.8em;
+		width: 100%;
+	}
+
+	.calendar__dates {
+		background-color: #f2f2f2;
+		height: 4.5em;
+		width: 100%;
+		margin-bottom: 1.2em;
+
+		ul {
+			height: 100%;
+			overflow-x: scroll;
+			position: relative;
+			width: 100%;
+			white-space: nowrap;
+		}
+	}
+
+	.calendar__indicator {
+		border-radius: 50%;
+		background-color: $color-green;
+		height: 10px;
+		position: absolute;
+		top: 5px;
+		right: 8px;
+		width: 10px;
+
+		transform: scale(1);
+		transition: all .6s;
+	}
+
+	.calendar__date {
+		display: inline-block; 
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+		padding: 0 0.2em;
+		overflow: hidden;
+
+		&.is--active {
+			
+			position: relative;
+
+			a {
+				top: 0.5em;
+				width: 8em;
+			}
+
+			.calendar__indicator {
+				transform: scale(50);
+			}
+
+			// &:after {
+			// 	content: "";
+			// 	position: absolute;
+			// 	width: 0; 
+			// 	height: 0; 
+			// 	border-left: 20px solid transparent;
+			// 	border-right: 20px solid transparent;
+			// 	border-top: 20px solid #f00;
+			// }
+		}
+
+		&.calendar__date--away {
+			
+			i {
+				background-color: $color-red;
+			}
+
+		}
+
+		a {
+			background-color: $color-gray-light;
+			color: $color-white;
+			text-align: center;
+			display: block;
+			height: 3.375em;
+			text-decoration: none;
+			width: 4.5em;	
+
+			&:hover .calendar__indicator {
+				transform: scale(50);
+			}
+		}
+
+		time {
+			display: block;
+			padding-top: 0.2em;
+			font-size: 1.125em;
+			font-weight: $font-weight-bold;
+			position: relative;
+		}
+
+		span {
+			font-size: 0.75em;
+			text-transform: uppercase;
+			font-weight: $font-weight-regular;
+			display: block;
+		}
+	}
+
+	.calendar__container {
+		text-align: center;
+		color: #393939;
+		margin-bottom: 1.2em;
+
+		.grid__column {
+			padding: 1.5em;
+		}
+	}
+
+	.br--right {
+
+		border-right: 1px solid rgba(226,225,225, 0.4);		
+			
+	}
+
+	.calendar__title {
+		text-transform: uppercase;
+		padding: 1.2em 3.75em;
+		border-bottom: 1px solid rgba(226,225,225, 0.4);
+		font-size: 1em;
+		font-weight: $font-weight-regular;
+
+		span {
+			font-weight: $font-weight-bold;
+			color: $color-green;
+		}
+	}
+
+	.calendar__box-title {
+		text-transform: uppercase;
+		font-weight: $font-weight-bold;
+
+		span {
+			font-size: 0.75em;
+			font-weight: $font-weight-regular;
+			display: block;
+		}
+	}

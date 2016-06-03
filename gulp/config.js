@@ -48,7 +48,7 @@ var config = {
     
     misc: {
         src: [
-            '*.ico'
+            '*.ico', 'manifest.json'
         ]
     },
 
