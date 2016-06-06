@@ -119,13 +119,11 @@
 
 		.grid__column {
 			padding: 1.5em;
+
+			&:first-child {
+				border-right: 1px solid rgba(226,225,225, 0.4);		
+			}
 		}
-	}
-
-	.br--right {
-
-		border-right: 1px solid rgba(226,225,225, 0.4);		
-			
 	}
 
 	.calendar__title {

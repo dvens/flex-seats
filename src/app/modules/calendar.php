@@ -17,75 +17,24 @@
 	<div class="calendar__dates">
 			
 		<ul>
-			<li class="calendar__date">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						26
-						<span>Mon</span>
-					</time>
-				</a>
-			</li>
+			<?php for($i = 0; $i < 7; $i++ ) { ?>	
+				
+				<li class="calendar__date">
+					
+					<a href="#">
+					
+						<i class="calendar__indicator"></i>
+					
+						<time>
+							<?php echo date('d', strtotime('+' . $i . 'day')); ?>
+							<span><?php echo date("M"); ?></span>
+						</time>
+					
+					</a>
 
-			<li class="calendar__date is--active">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						27
-						<span>Tue</span>
-					</time>
-				</a>
-			</li>
+				</li>
 
-			<li class="calendar__date calendar__date--away">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						28
-						<span>Wed</span>
-					</time>
-				</a>
-			</li>
-
-			<li class="calendar__date calendar__date--away">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						29
-						<span>Thu</span>
-					</time>
-				</a>
-			</li>
-
-			<li class="calendar__date">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						30
-						<span>Fri</span>
-					</time>
-				</a>
-			</li>
-
-			<li class="calendar__date calendar__date--away">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						31
-						<span>Sat</span>
-					</time>
-				</a>
-			</li>
-
-			<li class="calendar__date">
-				<a href="#">
-					<i class="calendar__indicator"></i>
-					<time>
-						1
-						<span>Sun</span>
-					</time>
-				</a>
-			</li>
+			<?php } ?>
 		</ul>
 
 	</div>
@@ -96,7 +45,7 @@
 			<span>status:</span> working from the office
 		</h2>
 
-		<div class="grid__column grid__column--half br--right">
+		<div class="grid__column grid__column--half">
 			<p class="calendar__box-title">seats<span>available</span></p>
 		</div>
 
