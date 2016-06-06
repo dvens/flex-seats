@@ -91,7 +91,8 @@
 			text-decoration: none;
 			width: 4.5em;	
 
-			&:hover .calendar__indicator {
+			&:hover .calendar__indicator,
+			&:focus .calen {
 				transform: scale(50);
 			}
 		}
@@ -112,7 +113,7 @@
 		}
 	}
 
-	.calendar__container {
+	.calendar__content {
 		text-align: center;
 		color: #393939;
 		margin-bottom: 1.2em;

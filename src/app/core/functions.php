@@ -3,17 +3,17 @@
 	function loadView() {
 		
 		$page = isset($_GET['page']) ? $_GET['page'] : 'home';
-		$template = "app/templates/". $page . ".tpl.php";
-		$template_error = "app/templates/404.php";
+		$template = 'app/templates/'. $page . '.tpl.php';
+		$errorTemplate = 'app/templates/404.php';
 
 		if(is_file($template)) {
 			
-			return include_once($template);
+			include_once($template);
 
 		} else {
 
-			$error = "Page not found";
-			return include_once($template_error);
+			$error = 'Page ' . $page . ' not found';
+			include_once($errorTemplate);
 
 		}
 
@@ -23,17 +23,20 @@
 		
 		$moduleName = isset($moduleName) ? $moduleName : null;
 		$moduleType = isset($moduleType) ? $moduleType : null;
-		$file = "app/modules/". $moduleName . ".php"; 
-
+		$errorTemplate = 'app/templates/404.php';
+		
+		$controller = 'app/modules/'. $moduleName . '/' . $moduleName . '.controller.php'; 
+		$file = 'app/modules/'. $moduleName . '/' . $moduleName . '.php'; 
 
 		if(is_file($file)) {
 			
-			return include($file);
+			include($controller);
+			include($file);
 
 		} else {
 
-			$error = "Module not found";
-			return include_once($template_error);
+			$error = 'Module ' . $moduleName . ' not found';
+			include_once($errorTemplate);
 
 		}
 
