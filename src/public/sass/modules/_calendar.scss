@@ -24,6 +24,7 @@
 			height: 100%;
 			overflow-x: scroll;
 			position: relative;
+			padding: 0.5em;
 			width: 100%;
 			white-space: nowrap;
 		}
@@ -63,15 +64,6 @@
 				transform: scale(50);
 			}
 
-			// &:after {
-			// 	content: "";
-			// 	position: absolute;
-			// 	width: 0; 
-			// 	height: 0; 
-			// 	border-left: 20px solid transparent;
-			// 	border-right: 20px solid transparent;
-			// 	border-top: 20px solid #f00;
-			// }
 		}
 
 		&.calendar__date--away {

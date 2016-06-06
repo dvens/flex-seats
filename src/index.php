@@ -1,4 +1,5 @@
 <?php 
+	require('./config.php');
 	require('app/core/functions.php');
 	include('app/_base/head.php');
 ?>
