@@ -12,11 +12,13 @@
 	    $date = new DateTime();
 	    $dates = Array();
 
-	    // iterates through days
+	    // iterates through days 
+	    // do one query 
 	    for ($day = 1; $day <= $amountDays; $day++) {
 	        
 	        $date->setDate($year, $month, $day);
-			$dates[$day]['date'] = $date->format("D");
+			$dates[$day]['date'] = $date->format('D');
+			$dates[$day]['full-date'] = $date->format('y-m-d');
 			$dates[$day]['status'] = true;
 
 	    }
@@ -37,6 +39,24 @@
 
 		}	
 
+	}
+
+	function getCurrentDay() {
+		return date('y-m-d');
 	}	
 
+	function isCurrentDay($date) {
+
+		if(getCurrentDay() === $date) {
+			
+			return true;
+
+		} else {
+			
+			return false;
+
+		}
+
+	}
+ 
 ?>

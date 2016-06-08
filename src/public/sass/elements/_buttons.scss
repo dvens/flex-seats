@@ -1,14 +1,37 @@
 .button,
 button {
-
-}
-
-.button__holder {
-
-}
-
-.button__holder--title {
+	background-color: #FAFAFA;
+	border: none;
+	color: $color-gray-dark;
+	display: block;
+	font-size: 0.8125em;
 	font-weight: $font-weight-bold;
-	font-size: 1em;
+	padding: 1.2em;
+	transition: opacity .2s;
 	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+	}
+
+	&.button--highlighted {
+		color: $color-blue;
+	}
 }
+
+	.button-holder {
+		
+		.button,
+		button {
+			float: left;
+			width: 50%;
+		}
+
+		.button:first-child,
+		button:first-child {
+			border-right: 1px solid $color-gray-light;
+		}
+	}
