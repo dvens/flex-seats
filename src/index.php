@@ -1,7 +1,9 @@
 <?php 
 	
 	require_once('./config.php');
-	require_once('app/core/peach.framework.php');
+	require_once('./app/core/peach.framework.php');
+
+	session_start();
 	
 	$app = new Peach(
 		// Pages url

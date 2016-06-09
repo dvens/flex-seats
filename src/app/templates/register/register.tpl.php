@@ -15,11 +15,11 @@
 		<div class="grid__container form">
 			
 			<div class="form__group">
-				<h2>login on damco seats</h2>
-				<p>Before logging in <a class="link" href="?page=register">register an account.</a></p>
+				<h2>register on damco seats</h2>
+				<p>You’re registering as an employee now.</p>
 			</div>
 			
-			<?php loadModule('form', 'register'); ?>
+			<?php $app->loadModule('form', 'register'); ?>
 
 		</div>
 

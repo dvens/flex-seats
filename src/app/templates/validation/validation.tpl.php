@@ -19,7 +19,7 @@
 				<p>Before registering we have to validate your code that you get from Damco.</p>
 			</div>
 			
-			<?php loadModule('form', 'validation'); ?>
+			<?php $app->loadModule('form', 'validation'); ?>
 
 		</div>
 

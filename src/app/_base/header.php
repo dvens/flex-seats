@@ -17,7 +17,11 @@
 				<li><a href="/desks">Desks</a></li>
 				<li><a href="/calendar">Calendar</a></li>
 				<li><a href="/account">Account</a></li>
-				<li><a href="?page=login">Login</a></li>
+				<?php if(!(isset($_SESSION['user']))) { ?>
+					<li><a href="?page=login">Login</a></li>
+				<?php } else { ?>
+					<li><a href="?page=home&logout">Logout</a></li>
+				<?php } ?>
 			</ul>
 
 		</nav>
