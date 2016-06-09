@@ -17,7 +17,7 @@
 				<li><a href="/desks">Desks</a></li>
 				<li><a href="/calendar">Calendar</a></li>
 				<li><a href="/account">Account</a></li>
-				<li><a href="/login">Login</a></li>
+				<li><a href="?page=login">Login</a></li>
 			</ul>
 
 		</nav>

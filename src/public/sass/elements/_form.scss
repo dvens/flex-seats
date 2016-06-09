@@ -1,0 +1,42 @@
+.form {
+	
+	color: $color-gray-dark;
+	text-align: left;
+
+	.form__group {
+		padding: 1.2em;
+	}
+
+	.form__group--small {
+		padding-top: 0px;
+	}
+
+	p {
+		max-width: 30em;
+	}
+
+	h2 {
+		font-weight: $font-weight-bold;
+		margin-bottom: 0.3em;
+	}
+
+	label {
+		display: block;
+		font-size:  0.912em;
+		font-weight: $font-weight-bold;
+		margin-bottom: 0.5em;
+		width: 100%;
+	}
+
+}
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		border: 1px solid #DFDCDC;
+		border-radius: 4px;
+		max-width: 28em;
+		margin-bottom: 0.5em;
+		padding: 0.5em;
+		width: 100%;
+	}

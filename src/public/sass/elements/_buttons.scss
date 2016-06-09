@@ -37,3 +37,12 @@ button {
 			border-right: 1px solid $color-gray-light;
 		}
 	}
+
+	.link {
+		color: $color-blue;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color-black;
+		}
+	}
