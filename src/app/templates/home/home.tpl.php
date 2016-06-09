@@ -4,6 +4,6 @@
 		<h2>Home</h2>
 	</header>
 
-	<?php loadModule('calendar', null); ?>
+	<?php $app->loadModule('calendar', null); ?>
 	
 </section>

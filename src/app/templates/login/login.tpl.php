@@ -14,8 +14,8 @@
 				<h2>login on damco seats</h2>
 				<p>Before logging in <a class="link" href="?page=register">register an account.</a></p>
 			</div>
-			
-			<?php loadModule('form', 'login'); ?>
+
+			<?php $app->loadModule('form', 'login'); ?>
 
 		</div>
 
