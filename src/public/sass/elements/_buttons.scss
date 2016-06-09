@@ -1,20 +1,22 @@
 .button,
 button {
 	background-color: #FAFAFA;
-	border: none;
+	border: 2px solid transparent;
 	color: $color-gray-dark;
 	display: block;
 	font-size: 0.8125em;
 	font-weight: $font-weight-bold;
+	overflow: hidden;
 	padding: 1.2em;
-	transition: opacity .2s;
+	position: relative;
+	transition: all .2s;
 	text-transform: uppercase;
 	text-align: center;
 	width: 100%;
 
 	&:hover,
 	&:focus {
-		opacity: 0.8;
+		border: 2px solid $color-blue;
 	}
 
 	&.button--highlighted {

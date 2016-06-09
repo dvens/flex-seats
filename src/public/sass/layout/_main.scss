@@ -1,6 +1,6 @@
 main {
     
-}
+}	
 
 	.page {
 		max-width: $width-max;
@@ -11,6 +11,19 @@ main {
 		background-color: $color-blue;
 		color: $color-white;
 		padding: 1em 0;
+		position: relative;
 		text-align: center;
 		width: 100%;
+
+		h2 {
+			display: inline-block;
+		}
+	}
+
+	.page__button-back {
+		left: 15px;
+		top: calc(50% + 2px);
+		text-decoration: none;
+		transform: translateY(-50%);
+		position: absolute;
 	}

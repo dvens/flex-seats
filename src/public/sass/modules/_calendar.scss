@@ -1,5 +1,5 @@
 .calendar {
-	
+
 }
 
 	.calendar__month-picker {
@@ -17,9 +17,13 @@
 	}
 
 	.calendar__button {
+		
+		opacity: 1;
+		transition: opacity .2s; 
 
-		&:hover {
-
+		&:hover,
+		&:focus {
+			opacity: 0.5;
 		}
 
 		&--prev {
@@ -36,7 +40,7 @@
 		height: 4.5em;
 		width: 100%;
 		margin-bottom: 1.2em;
-		-webkit-overflow-scrolling: touch;
+		
 
 		ul {
 			height: 100%;
@@ -67,6 +71,7 @@
 		transform: translateY(-50%);
 		position: relative;
 		padding: 0 0.2em;
+		overflow-x: hidden;
 		overflow-y: hidden;
 
 		&.is--active {
@@ -82,6 +87,10 @@
 				transform: scale(50);
 			}
 
+		}
+
+		.is--today {
+			border-bottom: 3px solid orange;
 		}
 
 		&.calendar__date--away {

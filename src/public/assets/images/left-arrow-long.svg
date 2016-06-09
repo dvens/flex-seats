@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="19px" viewBox="0 0 27 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>left-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="login-register" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1A.-Register-account-employee" transform="translate(-18.000000, -89.000000)" fill="#FFFFFF">
+            <g id="left-arrow" transform="translate(18.000000, 89.000000)">
+                <g id="Capa_1">
+                    <path d="M9.22336364,0.833521739 C9.58663636,0.46673913 10.1585455,0.46673913 10.5218182,0.833521739 C10.8728182,1.18791304 10.8728182,1.77773913 10.5218182,2.13130435 L3.93790909,8.77882609 L25.6639091,8.77882609 C26.1703636,8.77882609 26.586,9.18526087 26.586,9.6966087 C26.586,10.2079565 26.1703636,10.6276087 25.6639091,10.6276087 L3.93790909,10.6276087 L10.5218182,17.2627391 C10.8728182,17.6295217 10.8728182,18.2201739 10.5218182,18.5737391 C10.1585455,18.9405217 9.58663636,18.9405217 9.22336364,18.5737391 L1.08081818,10.3525217 C0.729818182,9.99813043 0.729818182,9.40830435 1.08081818,9.05473913 L9.22336364,0.833521739 L9.22336364,0.833521739 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

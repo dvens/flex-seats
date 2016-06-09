@@ -1,16 +1,16 @@
 <section class="calendar">
-	
+
 	<div class="calendar__month-picker">
 		
 		<?php if($month == '01') { ?>
 			
-			<a class="calendar__button calendar__button--prev" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '-1 month') . '&year=' . formatDate('y', $year, $month, $day, '-1 year') . '&day=' . formatDate('d', $year, $month, $day, false);; ?>">
+			<a class="calendar__button calendar__button--prev" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '-1 month') . '&year=' . formatDate('y', $year, $month, $day, '-1 year') . '&day=' . $day; ?>">
 				<svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.087 16l1.879-1.867L3.792 8l6.174-6.133L8.086 0 .035 8z" fill="#FFF" fill-rule="evenodd"/></svg>
 			</a>
 
 		<?php } else { ?>
 
-			<a class="calendar__button calendar__button--prev" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '-1 month') . '&year=' . $year . '&day=1'; ?>">
+			<a class="calendar__button calendar__button--prev" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '-1 month') . '&year=' . $year . '&day=01'; ?>">
 				<svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path d="M8.087 16l1.879-1.867L3.792 8l6.174-6.133L8.086 0 .035 8z" fill="#FFF" fill-rule="evenodd"/></svg>
 			</a>
 
@@ -22,13 +22,13 @@
 
 		<?php if($month == '12') { ?>
 			
-			<a class="calendar__button calendar__button--next" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '+1 month') . '&year=' . formatDate('y', $year, $month, $day, '+1 year') . '&day=' . formatDate('d', $year, $month, $day, false); ?>">
+			<a class="calendar__button calendar__button--next" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '+1 month') . '&year=' . formatDate('y', $year, $month, $day, '+1 year') . '&day=' . $day ?>">
 				<svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.913 0L.034 1.867 6.208 8 .034 14.133 1.914 16l8.052-8z" fill="#FFF" fill-rule="evenodd"/></svg>
 			</a>
 
 		<?php } else { ?>
 
-			<a class="calendar__button calendar__button--next" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '+1 month') . '&year=' . $year . '&day=1'; ?>">
+			<a class="calendar__button calendar__button--next" href="<?php echo '?page=home&month=' . formatDate('m', $year, $month, $day, '+1 month') . '&year=' . $year . '&day=01'; ?>">
 				<svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.913 0L.034 1.867 6.208 8 .034 14.133 1.914 16l8.052-8z" fill="#FFF" fill-rule="evenodd"/></svg>
 			</a>
 
@@ -37,19 +37,19 @@
 	</div>
       
 	<div class="calendar__dates">
-		
+
 		<ul>
 			<?php forEach($dates as $key => $date) {  ?>	
 				
-				<li class="calendar__date <?php echo ($date['status'] ? '' : 'calendar__date--away'); ?> <?php echo (isCurrentDay($date['full-date']) ? 'is--active' : ''); ?>">
+				<li class="calendar__date <?php echo ($date['status'] ? '' : 'calendar__date--away'); ?> <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
 					
-					<a href="#">
+					<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
 					
 						<i class="calendar__indicator"></i>
 					
 						<time>
 							<?php echo $key ?>
-							<span><?php echo $date['date'] ?></span>
+							<span><?php echo $date['day'] ?></span>
 						</time>
 					
 					</a>
@@ -92,15 +92,13 @@
 	</section>
 
 	<section class="grid__container">
-		<h2 class="title title--secondary">working at the office</h2>
-
-		<div class="button-holder">
-			<form action="#" method="post">
-				<button name="yes" value="yes" type="submit" class="button--highlighted">yes</button>	
-				<button name="no" value="no" type="submit">no</button>
-			</form>
-		</div>
-
+		
+		<h2 class="title title--secondary">working from home</h2>
+		
+		<form action="#" method="post">
+			<button name="action" value="yes" type="submit" class="button--highlighted">yes</button>	
+		</form>
+		
 	</section>
 
 </section>
