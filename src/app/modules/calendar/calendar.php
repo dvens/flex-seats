@@ -63,9 +63,19 @@
 	
 	<section class="calendar__content grid__container">
 		
-		<h2 class="title">
-			<span>status:</span> working from the office
-		</h2>
+		<?php if($pageData['status'] === 'home') { ?>
+		
+			<h2 class="title">
+				<span class="is--active">status:</span> working out of the office
+			</h2>
+
+		<?php } else { ?>
+
+			<h2 class="title">
+				<span>status:</span> working at the office
+			</h2>
+
+		<?php } ?>
 
 		<div class="grid__column grid__column--half">
 			
@@ -92,12 +102,28 @@
 	</section>
 
 	<section class="grid__container">
+
+		<?php if($pageData['status'] === 'home') { ?>
 		
-		<h2 class="title title--secondary">working from home</h2>
+			<h2 class="title title--secondary">working at the office</h2>
 		
-		<form action="#" method="post">
-			<button name="action" value="yes" type="submit" class="button--highlighted">yes</button>	
-		</form>
+			<form action="?page=home" method="post">
+				<input name="date" type="hidden" value="<?php echo $year .'-'. $month . '-' . $day ?>">
+				<button name="action" value="no" type="submit" class="button--highlighted">yes</button>	
+			</form>
+
+		<?php } else { ?>
+
+			<h2 class="title title--secondary">working from home</h2>
+		
+			<form action="?page=home" method="post">
+				<input name="date" type="hidden" value="<?php echo $year .'-'. $month . '-' . $day ?>">
+				<button name="action" value="yes" type="submit" class="button--highlighted">yes</button>	
+			</form>
+
+		<?php } ?>
+		
+		
 		
 	</section>
 

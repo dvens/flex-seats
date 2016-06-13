@@ -11,4 +11,8 @@
 
 	}
 
+	// Page specific things.
+	// Get amount of desks here and amount of people 
+	// Handle form
+
 ?>

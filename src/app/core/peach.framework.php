@@ -57,7 +57,7 @@
 		}
 
 		public function setPageTitle() {
-			echo $this->page;
+			return $this->page;
 		}
 
 	}
