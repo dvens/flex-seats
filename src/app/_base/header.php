@@ -1,15 +1,16 @@
-<header class="header js--navigation">
+<header class="header js--header">
 	
 	<div class="header__container">
+		
 		<h1 class="header__logo">
 			<a href="/">
 				Damco-Seats
 			</a>
 		</h1>
+	
+		<button class="header__navigation-toggle"></button>
 
 		<nav class="header__navigation">
-			
-			<button class="header__navigation-toggle"></button>
 
 			<ul>		
 				
