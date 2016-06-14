@@ -1,20 +1,11 @@
-var ExampleClass = require('./modules/ExampleClass');
+var moduleInitializer = require('./helpers/moduleinit');
 
-console.log('main is initializedsssss!');
+// Require modules
+var Calendar = require('./modules/calendar');
 
-var main = new Main();
-main.init();
+moduleInitializer( '.js--calendar', Calendar );
 
-function Main() {
 
-	var _this = this;
-	var _ExampleClass;
 
-	_this.init = function() {
 
-	 	_ExampleClass = new ExampleClass();
-
-	}
-
-}
 

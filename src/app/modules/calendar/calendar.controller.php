@@ -11,6 +11,7 @@
 
 	$dates = getMonth($year, $month, $conn);
 	$pageData = getPageData($fullDate, $conn);
+	$amountEmployees = getEmployees($fullDate, $conn);
 
 	if(isset($_POST['action'])) {
 
@@ -101,6 +102,39 @@
 	    }
 	    
 	    return $dates;
+
+	}
+
+	function getEmployees($date, $conn) {
+
+		$amountPeople = 0;
+		$amountActivePeople = 0;
+
+		$sql = 'SELECT count(*) as amount FROM users';
+	    $stmt = $conn->prepare($sql);
+	    
+	    //Execute query
+	    $stmt->execute();
+	    
+	    //Fetch the query.
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	    $amountPeople = $result['amount'];
+
+	    $sql = 'SELECT count(*) as amount FROM calendar WHERE calendarDate = :calendarDate';
+	    $stmt = $conn->prepare($sql);
+
+	    $stmt->bindValue(':calendarDate', $date);
+	    
+	    //Execute query
+	    $stmt->execute();
+	    
+	    //Fetch the query.
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	    $amountActivePeople = $result['amount']; 
+
+	    return $amountPeople - $amountActivePeople;
 
 	}
 
