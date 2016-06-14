@@ -15,8 +15,6 @@
 
 	if(isset($_POST['action'])) {
 
-		// check if date is already in calendar;
-
 		$date = isset($_POST['date']) ? '20' . $_POST['date'] : null;
 		$status = isset($_POST['action']) ? $_POST['action'] : null;
 		$statusMessage = '';
