@@ -1,4 +1,4 @@
-function moduleInit( selector, constructor) {
+function moduleInit( selector, constructor ) {
 
 	var moduleElements = document.querySelectorAll( selector );
 	var moduleInstances = [];

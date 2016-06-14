@@ -60,6 +60,14 @@
 			return $this->page;
 		}
 
+		public function navigationActive($name) {
+
+			if($name === $this->page) {
+				return true;
+			}
+
+		}
+
 	}
 
 ?>
