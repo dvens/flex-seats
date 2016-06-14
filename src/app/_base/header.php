@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header js--navigation">
 	
 	<div class="header__container">
 		<h1 class="header__logo">
@@ -14,14 +14,20 @@
 
 			<ul>
 				<li><a href="/">Home</a></li>
-				<li><a href="/desks">Desks</a></li>
-				<li><a href="/calendar">Calendar</a></li>
-				<li><a href="/account">Account</a></li>
+				<li><a href="/?page=desks">Desks</a></li>
+				<li><a href="/?page=calendar">Calendar</a></li>
+				<li><a href="/?page=account">Account</a></li>
+				
 				<?php if(!(isset($_SESSION['user']))) { ?>
+					
 					<li><a href="?page=login">Login</a></li>
+
 				<?php } else { ?>
+					
 					<li><a href="?page=home&logout">Logout</a></li>
+
 				<?php } ?>
+
 			</ul>
 
 		</nav>

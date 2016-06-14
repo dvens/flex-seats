@@ -42,7 +42,8 @@ button {
 		color: $color-blue;
 		text-decoration: underline;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $color-black;
 		}
 	}

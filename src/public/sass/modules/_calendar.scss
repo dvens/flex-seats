@@ -149,7 +149,8 @@
 
 			transition: all .2s;
 
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: $color-blue;
 				color: $color-white;
 			}
