@@ -134,7 +134,7 @@
 
 	    $amountActivePeople = $result['amount']; 
 
-	    return $amountPeople - $amountActivePeople;
+	    return $amountPeople - $amountActivePeople + 26;
 
 	}
 

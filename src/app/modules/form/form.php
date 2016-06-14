@@ -19,7 +19,7 @@
 			<label for="emailaddress">Email address*</label>	
 			<input id="emailaddress" name="emailaddress" type="email">
 			
-			<label for="surname">Surname*</label>	
+			<label for="surname">Name*</label>	
 			<input id="surname" name="surname" type="text">
 
 			<label for="password">Password*</label>	
