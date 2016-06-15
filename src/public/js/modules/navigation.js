@@ -1,8 +1,7 @@
-function Pageloader(element) {
+function Navigation(element) {
 
 	var _this = this;
     var _element = element;
-    var _links = _element.querySelectorAll('a');
     var _navToggle = _element.querySelector('.header__navigation-toggle');
     var _navContainer = _element.querySelector('.header__navigation');
 
@@ -41,4 +40,4 @@ function Pageloader(element) {
 
 }
 
-module.exports = Pageloader;
+module.exports = Navigation;

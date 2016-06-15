@@ -2,10 +2,10 @@ var moduleInitializer = require('./helpers/moduleinit');
 
 // Require modules
 var Calendar = require('./modules/calendar');
-var Pageloader = require('./modules/pageloader');
+var Navigation = require('./modules/navigation');
 
 moduleInitializer( '.js--calendar', Calendar );
-moduleInitializer( '.js--header', Pageloader );
+moduleInitializer( '.js--header', Navigation );
 
 
 
