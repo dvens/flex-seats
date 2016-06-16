@@ -1,5 +1,5 @@
 .header {
-	max-width: 52em;
+	max-width: $width-max + 2em;
 	margin: 0 auto;
 }
 	
@@ -149,24 +149,27 @@
 			}
 
 		}
-
-		&:before,
-		&:after {
+		
+		span {
 			background-color: $color-blue;
-			content: " ";
+			display: block;
 			height: 2px;
 			position: absolute;
-			width: 1.2em;
-			left: calc(50% - 0.6em);
+			width: 1.1em;
+			left: calc(50% - 0.55em);
 			transition: all .2s ease-in;
-		}
 
-		&:before {
-			top: 1em;
-		}
+			&:nth-child(1) {
+				top: 10px;
+			}
 
-		&:after {
-			top: 1.4em;
+			&:nth-child(2) {
+				top: 14px;
+			}
+
+			&:nth-child(3) {
+				top: 18px;
+			}
 		}
 
 		@media only screen and (min-width: em($breakpoint-small)) {

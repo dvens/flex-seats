@@ -8,7 +8,11 @@
 			</a>
 		</h1>
 	
-		<button class="header__navigation-toggle"></button>
+		<button class="header__navigation-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 
 		<nav class="header__navigation">
 
