@@ -17,6 +17,7 @@ function Pageloader() {
     var _links;
     var _navContainer;
     var _isTransitioning = false;
+    var _firstTime = true;
 
     _this.init = function( containerID ) {
 
@@ -33,6 +34,8 @@ function Pageloader() {
         _navContainer = document.querySelector('.header__navigation');
         _currentItem = document.querySelector('[ajax-link].is--active');
 
+        window.addEventListener('popstate', load);
+
     }
 
     _this.addLinks = function( links ) {
@@ -46,7 +49,9 @@ function Pageloader() {
 
             _links[i].addEventListener('click', function(e) {
                 
-                if( _isTransitioning ) return;    
+                if( _isTransitioning ) return;   
+
+                _firstTime = false; 
                 
                 e.preventDefault();
 
@@ -63,6 +68,8 @@ function Pageloader() {
     } 
     
     function load(event) {
+
+        if(_firstTime) return;
         
         var _url = event.target.href || window.location.href;
         var _title = _url || 'home';
@@ -124,8 +131,6 @@ function Pageloader() {
 
 
     function toggleLoader(elementShow) {
-
-        console.log(elementShow);
 
         if(elementShow == 'show') {
 
