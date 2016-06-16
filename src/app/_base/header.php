@@ -14,7 +14,7 @@
 			<span></span>
 		</button>
 
-		<nav class="header__navigation">
+		<nav class="header__navigation js--navigation">
 
 			<ul>		
 				

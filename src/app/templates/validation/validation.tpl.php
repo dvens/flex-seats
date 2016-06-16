@@ -1,4 +1,4 @@
-<section class="page">
+<section class="page" ajax-data-id="validation">
 
 	<header class="page__header">
 		

@@ -3,7 +3,7 @@ function Navigation(element) {
 	var _this = this;
     var _element = element;
     var _navToggle = _element.querySelector('.header__navigation-toggle');
-   var _navContainer = _element.querySelector('.header__navigation');
+    var _navContainer = _element.querySelector('.header__navigation');
 
     function init() {
 
