@@ -117,7 +117,7 @@
 
 		<?php if($pageData['status'] === 'home') { ?>
 		
-			<h2 class="title title--secondary">working at the office</h2>
+			<h2 class="title title--secondary">are you working at the office?</h2>
 		
 			<form action="?page=home" method="post">
 				<input name="date" type="hidden" value="<?php echo $year .'-'. $month . '-' . $day ?>">
@@ -126,7 +126,7 @@
 
 		<?php } else { ?>
 
-			<h2 class="title title--secondary">working from home</h2>
+			<h2 class="title title--secondary">are you working from home?</h2>
 		
 			<form action="?page=home" method="post">
 				<input name="date" type="hidden" value="<?php echo $year .'-'. $month . '-' . $day ?>">

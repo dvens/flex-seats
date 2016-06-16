@@ -1,10 +1,63 @@
 .header {
 	max-width: 52em;
 	margin: 0 auto;
+}
+	
+	.header__container {
+		overflow: hidden;
+		padding: 1em 0.8em;
+		width: 100%;
+	}
 
-	&.js--navigation {
+	.header__logo {
+		float: left;
+
+		a {
+			background: url('../images/logo.svg') no-repeat top left;
+			background-size: 100%;
+			display: block;
+			height: 1.5em;
+			text-indent: -999em;
+			width: 3em;
+		}
+	}
+
+	.header__navigation {
+		float: right;
+
+		ul {
+			display: block;
+			list-style: none;
+			padding-top: 0.8rem;
+		}
+
+		li {
+			display: inline-block;
+			margin-left: 1em;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		a {
+			color: $color-gray-dark;
+			font-size: 0.9em;
+			font-weight: $font-weight-bold;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: all .2s ease-in;
+
+			&:hover,
+			&:focus,
+			&.is--active {
+				color: $color-blue;
+			}
+		}
+
+
+		@media only screen and (max-width: em($breakpoint-small)) {
 		
-		.header__navigation {
 			background-color: rgba(49, 165, 224, 0.9);
 			bottom: 0;
 			left: 0;
@@ -70,66 +123,7 @@
 				}
 			}
 		}
-
-		.header__navigation-toggle {
-			display: block;
-		}
-
-	}
-}
-	
-	.header__container {
-		overflow: hidden;
-		padding: 1em 0.8em;
-		width: 100%;
-	}
-
-	.header__logo {
-		float: left;
-
-		a {
-			background: url('../images/logo.svg') no-repeat top left;
-			background-size: 100%;
-			display: block;
-			height: 1.5em;
-			text-indent: -999em;
-			width: 3em;
-		}
-	}
-
-	.header__navigation {
-		float: right;
-
-		ul {
-			display: block;
-			list-style: none;
-			padding-top: 0.8rem;
-		}
-
-		li {
-			display: inline-block;
-			margin-left: 1em;
-
-			&:first-child {
-				margin-left: 0;
-			}
-		}
-
-		a {
-			color: $color-gray-dark;
-			font-size: 0.9em;
-			font-weight: $font-weight-bold;
-			text-decoration: none;
-			text-transform: uppercase;
-			transition: all .2s ease-in;
-
-			&:hover,
-			&:focus,
-			&.is--active {
-				color: $color-blue;
-			}
-		}
-	
+		
 	}
 
 	.header__navigation-toggle {
@@ -137,7 +131,7 @@
 		box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
 		border-radius: 50%;
 		cursor: pointer;
-		display: none;
+		display: block;
 		height: 2.5em;
 		float: right;
 		position: relative;
@@ -175,9 +169,8 @@
 			top: 1.4em;
 		}
 
-	}
-
-	.header__navigation-status:checked {
-
-		
+		@media only screen and (min-width: em($breakpoint-small)) {
+			display: none;
+		}
+	
 	}
