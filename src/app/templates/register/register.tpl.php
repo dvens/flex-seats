@@ -1,4 +1,4 @@
-<section class="page" ajax-data-id="register">
+<section class="page">
 
 	<header class="page__header">
 		

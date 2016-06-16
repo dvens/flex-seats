@@ -13,12 +13,7 @@ function Loader() {
 
 				if (this.status >= 200 && this.status < 300) {
 			        
-			   		if(data) {
-			   			resolve(xhr.response);	
-			   		} else {
-			   			resolve(JSON.parse(xhr.response));
-			   		}
-			        
+			   		resolve(xhr.response);
 			    
 			    } else {
 				    
@@ -31,17 +26,13 @@ function Loader() {
 				}
 
 			}	
-
-			if(data) {
-				console.log(data);
-				xhr.send(data);	
-			} else {
-				xhr.send();	
-			}
 			
+			xhr.send();	
 		
 		});
 
 	}
 
 }
+
+module.exports = Loader;

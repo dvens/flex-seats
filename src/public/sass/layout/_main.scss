@@ -1,10 +1,29 @@
 main {
-    
+    opacity: 1;
+  	visibility: visible;
+
+  	transform: translateY(0px);
+
+  	transition: all .3s ease-in-out;
+
+  	transition-delay: .2s;
+
+  	&.is--transitioning {
+
+    	transform: translateY(10px);
+    	opacity: 0;
+    	visibility: hidden;
+
+  	}
 }	
 
 	.page {
 		max-width: $width-max;
 		margin: 0 auto;
+	}
+
+	.page-holder {
+		display: none;
 	}
 
 	.page__header {

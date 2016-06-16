@@ -22,8 +22,10 @@
 ?>
 
 <?php include('app/_base/header.php'); ?>
+	
+	<div class="loader"></div>
 
-	<main>
+	<main ajax-container>
 		<?php $app->loadView($app); ?>
 	</main> <!-- end main -->
 

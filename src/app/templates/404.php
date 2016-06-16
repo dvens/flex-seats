@@ -1,4 +1,4 @@
-<section class="page" ajax-data-id="404">
+<section class="page">
 
 	<h1><?php echo $error ?></h1>
 
