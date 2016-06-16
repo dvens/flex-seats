@@ -79,6 +79,8 @@ function Pageloader() {
 
     function loadNewContent(page) {
 
+        toggleLoader('show');
+
         var _div = document.createElement('div');
 
         _loader.load('GET', page).then(function(response){
@@ -122,6 +124,8 @@ function Pageloader() {
 
 
     function toggleLoader(elementShow) {
+
+        console.log(elementShow);
 
         if(elementShow == 'show') {
 
