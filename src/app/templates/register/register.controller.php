@@ -16,6 +16,7 @@
 		$surname = (isset($_POST['surname']) ? $_POST['surname'] : null);
 		$password = (isset($_POST['password']) ? $_POST['password'] : null);
 		$deskID = 0;
+		$role = 'user';
 
 		$sql = 'SELECT * FROM users WHERE emailaddress = :emailaddress';
 	    $stmt = $conn->prepare($sql);
@@ -44,7 +45,7 @@
 
 		}
 
-		$sql = 'INSERT INTO users (emailaddress, surname, password, deskID) VALUES (:emailaddress, :surname, :password, :deskID)';
+		$sql = 'INSERT INTO users (emailaddress, surname, password, deskID, role) VALUES (:emailaddress, :surname, :password, :deskID, :role)';
 	    $stmt = $conn->prepare($sql);
 	    
 	    //Bind the values;
@@ -52,6 +53,7 @@
 	    $stmt->bindValue(':surname', $surname);
 	    $stmt->bindValue(':password', $password);
 	    $stmt->bindValue(':deskID', $deskID);
+	    $stmt->bindValue(':role', $role);
 	 	
 	    // Fetch the query
 	    $result = $stmt->execute();

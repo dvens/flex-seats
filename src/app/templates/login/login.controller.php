@@ -34,6 +34,7 @@
 
 	    		$_SESSION['user'] = $result['surname'];
 	    		$_SESSION['userID'] = $result['ID'];
+	    		$_SESSION['userRole'] = $result['role'];
 
 	    		header('Location: ?page=home');
 
