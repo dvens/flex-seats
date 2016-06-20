@@ -71,8 +71,6 @@
 	}
 	
 	.calendar__arrow {
-		// display: none;
-	
 		position: relative;
 		width: 8.4375em;
 
@@ -159,8 +157,23 @@
 			&:focus {
 				background-color: $color-blue;
 				color: $color-white;
+
+				svg {
+					fill: $color-white;
+				}
 			}
 
+		}
+
+		.icon {
+			padding: 5px 10px;
+			margin-right: 1em;
+		}
+
+		svg {
+			fill: $color-blue;
+			position: relative;
+			top: 4px;
 		}
 
 		@media only screen and (min-width: em($breakpoint-small)) {
@@ -173,11 +186,12 @@
 				margin-top: 2px;
 			}
 
-			a {
-				float: right;
-			}
 		}
 
+	}
+		
+	.calendar__legend-buttons {
+		float: right;
 	}
 
 	.calendar__date {

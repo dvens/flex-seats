@@ -4,4 +4,6 @@
 		<h2>Admin panel</h2>
 	</header>
 	
+	<?php $app->loadModule('userlist', null); ?>
+
 </section>

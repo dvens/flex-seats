@@ -23,6 +23,10 @@ button {
 	&.button--highlighted {
 		color: $color-blue;
 	}
+
+	&.button--delete {
+		color: $color-red;
+	}
 }
 
 	.button-holder {

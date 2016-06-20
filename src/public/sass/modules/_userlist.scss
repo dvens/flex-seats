@@ -1,0 +1,17 @@
+.admin-list {
+	list-style: none;
+	
+	li {
+		background-color: #f1f1f1;
+		margin-bottom: 1em;
+
+		&:nth-child(odd) {
+			background-color: #f9f9f9;
+		}
+	}
+
+}
+
+	.admin-list__email {
+		padding: 1em;
+	}

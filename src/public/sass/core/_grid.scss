@@ -1,5 +1,5 @@
-.grid__container:before, .grid__container:after { content: " "; display: table; }
-.grid__container:after { clear: both; }
+.grid__container:before, .grid__container:after, .grid__wrapper:before, .grid__wrapper:after { content: " "; display: table; }
+.grid__container:after, .grid__wrapper:after { clear: both; }
 
 .grid__container {
 	background-color: $color-white;

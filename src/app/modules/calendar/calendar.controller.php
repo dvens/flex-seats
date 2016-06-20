@@ -40,6 +40,12 @@
 			$dates[$day]['date'] = $date->format('y-m-d');
 			$dates[$day]['status'] = true;
 
+			if( $dates[$day]['day'] === 'Sat' || $dates[$day]['day'] === 'Sun' ) {
+
+				$dates[$day]['status'] = 'enabled';
+
+			}
+
 			foreach ($results as $result) {
 				
 				if ($result['calendarDate'] === '20'.$dates[$day]['date']) {
