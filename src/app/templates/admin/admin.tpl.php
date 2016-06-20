@@ -24,4 +24,6 @@
 
 	<?php $app->loadModule('desklist', null); ?>
 
+	<?php $app->loadModule('grouplist', null); ?>
+
 </section>

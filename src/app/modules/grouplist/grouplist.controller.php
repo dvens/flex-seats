@@ -17,7 +17,7 @@
 	    // Fetch the query
 	    $stmt->execute();
 
-	    $_SESSION['formMessage'] = 'The desk with id '. $roomID . ' is succesfully deleted.';
+	    $_SESSION['formMessage'] = 'The room with id '. $roomID . ' is succesfully deleted.';
 		header('Location: ?page=admin');
 		exit;
 
@@ -25,55 +25,35 @@
 
 	if( isset($_POST['addRoom']) ) {
 
-		// $sorts = (isset($_POST['sorts']) ? $_POST['sorts'] : 'flex desk' );
-		// $rooms = (isset($_POST['rooms']) ? $_POST['rooms'] : '' );
-		// $userID = 0;
+		$roomName = (isset($_POST['roomname']) ? $_POST['roomname'] : '');
 
-		// // If there is no room selected
-		// if( empty($rooms) ){
+		// If there is no room selected
+		if( empty($roomName) ){
 
-		// 	$_SESSION['formError'] = 'A desk has to have a room please create or select one.';
-	 //    	header('Location: ?page=admin');
-	 //    	exit;
+			$_SESSION['formError'] = 'A room has to have a name.';
+	    	header('Location: ?page=admin');
+	    	exit;
 
-	 //    }
+	    }
 		
-		// $sql = 'INSERT INTO desk (status, userID, room) VALUES (:status, :userID, :room)';
-	 //    $stmt = $conn->prepare($sql);
-	    
-	 //    //Bind the values;
-	 //    $stmt->bindValue(':status', $sorts);
-	 //    $stmt->bindValue(':userID', $userID);
-	 //    $stmt->bindValue(':room', $rooms);
-	 	
-	 //    // Fetch the query
-	 //    $result = $stmt->execute();
-
-	 //    // If the server returns a value
-	 //    if($result){
-
-		// 	$_SESSION['formMessage'] = 'You\'ve succesfully added a desk';
-	 //    	header('Location: ?page=admin');
-	 //    	exit;
-
-	 //    }
-
-	}
-
-	// Return all rooms
-	function getRooms($conn) {
-
-		$sql = 'SELECT * FROM rooms';
+		$sql = 'INSERT INTO rooms (name) VALUES (:roomname)';
 	    $stmt = $conn->prepare($sql);
-
-	    //Execute query
-	    $stmt->execute();
 	    
-	    //Fetch the query.
-	    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	    //Bind the values;
+	    $stmt->bindValue(':roomname', $roomName);
+	 	
+	    // Fetch the query
+	    $result = $stmt->execute();
 
-	    return $results;
-		
+	    // If the server returns a value
+	    if($result){
+
+			$_SESSION['formMessage'] = 'You\'ve succesfully added ' . $roomName;;
+	    	header('Location: ?page=admin');
+	    	exit;
+
+	    }
+
 	}
 
 ?>

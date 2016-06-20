@@ -43,6 +43,9 @@
 		
 		<div class="form__group form__group--small">
 
+			<label for="room">Room name*</label>	
+			<input id="room" name="roomname" type="text">
+
 		</div>
 	
 		<button name="addRoom" type="submit" class="button--highlighted">Add room</button>	
