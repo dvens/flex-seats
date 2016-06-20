@@ -28,7 +28,7 @@
 
     	if(!$code) {
     		
-    		$GLOBALS['formError'] = "You've not entered the right validation code: ". $validationCode ." try again.";
+    		$app -> setErrorMessage("You've not entered the right validation code: ". $validationCode ." try again.");
 
     	} else {
 

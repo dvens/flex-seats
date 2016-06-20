@@ -43,7 +43,7 @@
 		a {
 			color: $color-gray-dark;
 			font-size: 0.9em;
-			font-weight: $font-weight-bold;
+			font-weight: $font-weight-semibold;
 			text-decoration: none;
 			text-transform: uppercase;
 			transition: all .2s ease-in;
@@ -132,11 +132,11 @@
 		border-radius: 50%;
 		cursor: pointer;
 		display: block;
-		height: 2.5em;
+		height: 3.5em;
 		float: right;
 		position: relative;
 		transition: all .2s ease-in-out;
-		width: 2.5em;
+		width: 3.5em;
 		z-index: 10;
 
 		&:hover,
@@ -160,15 +160,15 @@
 			transition: all .2s ease-in;
 
 			&:nth-child(1) {
-				top: 10px;
+				top: 15px;
 			}
 
 			&:nth-child(2) {
-				top: 14px;
+				top: 19px;
 			}
 
 			&:nth-child(3) {
-				top: 18px;
+				top: 23px;
 			}
 		}
 

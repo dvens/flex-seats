@@ -18,7 +18,7 @@
 
 		if(empty($emailaddress) || empty($surname) || empty($password)) {
 	    	
-	    	$GLOBALS['formError'] = 'Please do not let any fields empty!';
+	    	$app -> setErrorMessage('Please do not let any fields empty!');
 	    	return;
 
 	    }
@@ -27,6 +27,7 @@
 								 surname = :surname,
 								 password = :password
 								 WHERE ID = :ID';
+								 
 		$stmt = $conn->prepare($sql);
 
 		$stmt->bindValue(':ID', $_SESSION['userID']);
@@ -36,7 +37,9 @@
 
 		$stmt->execute();
 
+		$app -> setFormMessage("You've update your profile!");
 		header('Location: ?page=account');
+		exit;
 
 	}
 

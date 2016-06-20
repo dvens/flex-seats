@@ -72,6 +72,18 @@
 
 		}
 
+		public function setErrorMessage($message) {
+
+			$_SESSION['formError'] = $message;
+
+		}
+
+		public function setFormMessage($message) {
+
+			$_SESSION['formMessage'] = $message;
+
+		}
+
 	}
 
 ?>

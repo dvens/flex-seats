@@ -26,7 +26,7 @@
 
 	    if(!$result) {
 
-	    	$GLOBALS['formError'] = 'The email address or password is not matching.';
+	    	$app -> setErrorMessage('The email address or password is not matching.');
 
 	    } else {
 
@@ -40,7 +40,7 @@
 
 	    	} else {
 
-	    		$GLOBALS['formError'] = 'Wrong password try again!';
+	    		$app -> setErrorMessage('Wrong password try again!');
 
 	    	}
 

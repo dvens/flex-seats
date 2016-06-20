@@ -4,15 +4,15 @@
 		
 		<div class="form__group form__group--small">
 
-			<?php if(isset($GLOBALS['formError'])) { ?>
+			<?php if(isset($_SESSION['formError'])) { ?>
 				
-				<p class="form__message form__message--error"><?php echo $GLOBALS['formError']; ?></p>
+				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']); ?></p>
 
 			<?php } ?>
 
-			<?php if(isset($GLOBALS['formMessage'])) { ?>
+			<?php if(isset($_SESSION['formMessage'])) { ?>
 				
-				<p class="form__message"><?php echo $GLOBALS['formMessage']; ?></p>
+				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']);?></p>
 
 			<?php } ?>
 			
@@ -35,15 +35,15 @@
 		
 		<div class="form__group form__group--small">
 
-			<?php if(isset($GLOBALS['formError'])) { ?>
+			<?php if(isset($_SESSION['formError'])) { ?>
 				
-				<p class="form__message form__message--error"><?php echo $GLOBALS['formError']; ?></p>
+				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']); ?></p>
 
 			<?php } ?>
 
-			<?php if(isset($GLOBALS['formMessage'])) { ?>
+			<?php if(isset($_SESSION['formMessage'])) { ?>
 				
-				<p class="form__message"><?php echo $GLOBALS['formMessage']; ?></p>
+				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']); ?></p>
 
 			<?php } ?>
 			
@@ -63,15 +63,15 @@
 		
 		<div class="form__group form__group--small">
 
-			<?php if(isset($GLOBALS['formError'])) { ?>
+			<?php if(isset($_SESSION['formError'])) { ?>
 				
-				<p class="form__message form__message--error"><?php echo $GLOBALS['formError']; ?></p>
+				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']);?></p>
 
 			<?php } ?>
 
-			<?php if(isset($GLOBALS['formMessage'])) { ?>
+			<?php if(isset($_SESSION['formMessage'])) { ?>
 				
-				<p class="form__message"><?php echo $GLOBALS['formMessage']; ?></p>
+				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']);?></p>
 
 			<?php } ?>
 			

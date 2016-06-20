@@ -12,13 +12,15 @@ function Navigation(element) {
     function init() {
 
     	initEvents();
-        _pageLoader.init('[ajax-container]');
+
+        if(typeof Promise !== 'undefined'){
+            _pageLoader.init('[ajax-container]');
+            _pageLoader.addLinks(_navLinks);
+        }
 
     }
 
     function initEvents (){
-
-        _pageLoader.addLinks(_navLinks);
 
         _navToggle.addEventListener('click', function(e) {
 

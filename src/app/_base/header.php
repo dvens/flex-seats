@@ -28,6 +28,13 @@
 					<li><a ajax-link class="<?php echo ($app->navigationActive('home') ? 'is--active' : ''); ?>" href="/">Home</a></li>
 					<li><a ajax-link class="<?php echo ($app->navigationActive('desks') ? 'is--active' : ''); ?>" href="/?page=desks">Desks</a></li>
 					<li><a ajax-link class="<?php echo ($app->navigationActive('calendar') ? 'is--active' : ''); ?>" href="/?page=calendar">Calendar</a></li>
+					
+					<?php if( $_SESSION['userRole'] === 'admin' ) { ?>
+					
+						<li><a ajax-link class="<?php echo ($app->navigationActive('admin') ? 'is--active' : ''); ?>" href="/?page=admin">Admin panel</a></li>
+					
+					<?php } ?>
+
 					<li><a ajax-link class="<?php echo ($app->navigationActive('account') ? 'is--active' : ''); ?>" href="/?page=account">Account</a></li>
 					<li><a href="?page=home&logout">Logout</a></li>
 

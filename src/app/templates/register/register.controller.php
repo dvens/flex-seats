@@ -32,7 +32,7 @@
 
 	    if(empty($emailaddress) || empty($surname) || empty($password)) {
 	    	
-	    	$GLOBALS['formError'] = 'Please fill in all required* fields';
+	    	$app -> setErrorMessage('Please fill in all required* fields');
 	    	return;
 
 	    }
@@ -40,7 +40,7 @@
 	    // Check if username exists
 	    if($result['emailaddress']){
 	       
-	       $GLOBALS['formError'] = 'This email address: '. $emailaddress .' already exists';
+	       $app -> setErrorMessage('This email address: '. $emailaddress .' already exists');
 	       return;
 
 		}
@@ -60,8 +60,10 @@
 	    
 	    if($result){
 
-	    	$GLOBALS['formMessage'] = 'Thanks '. $surname .' for registering at Damco Seats <a href="?page=login" class="link">go to login page</a>.';
-	    
+			$app -> setFormMessage('Thanks '. $surname .' for registering at Damco Seats.');
+	    	header('Location: ?page=login');
+	    	exit;
+
 	    }
 
 	}

@@ -3,7 +3,7 @@ var Loader = require('./htmlLoader');
 function Pageloader() {
 
 	var _this = this;
-    var _isSupported = (window.history && window.history.pushState);
+    var _isSupported = (window.history && window.history.pushState && window.Promise);
     var _body = document.body;
     var _loaderElement;
     var _html; 
@@ -55,9 +55,14 @@ function Pageloader() {
                 
                 e.preventDefault();
 
-                _currentItem.classList.remove('is--active');
-                this.classList.add('is--active');
-                _currentItem = this;
+                if( _currentItem ) {
+
+                    _currentItem.classList.remove('is--active');
+                    this.classList.add('is--active');
+                    _currentItem = this;
+                    
+                }
+               
                 _navContainer.classList.remove('is--active');
                 load(e);
 

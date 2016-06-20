@@ -47,6 +47,7 @@
 			padding: 0.5em;
 			width: 100%;
 			white-space: nowrap;
+			
 		}
 
 		@media only screen and (min-width: em($breakpoint-small)) {
@@ -230,7 +231,7 @@
 			display: block;
 			height: 3.375em;
 			text-decoration: none;
-			width: 4.5em;	
+			width: 4.5em;
 
 			&:hover .calendar__indicator,
 			&:focus .calendar__indicator {
