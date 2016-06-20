@@ -1,3 +1,4 @@
+<!-- Normal calendar -->
 <section class="calendar js--calendar">
 
 	<div class="calendar__month-picker">
@@ -137,8 +138,6 @@
 			</form>
 
 		<?php } ?>
-		
-		
 		
 	</section>
 

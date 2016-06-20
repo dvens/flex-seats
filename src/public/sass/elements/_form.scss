@@ -29,10 +29,27 @@
 	}
 
 }
-	
+
+	select {
+	    background: transparent url(../images/arrow-down.svg) 96% 14px no-repeat;
+		border: none;
+	    box-shadow: none;   
+	    position: relative;
+
+    	-webkit-appearance: none;
+       	-moz-appearance: none;
+        appearance: none;
+	}
+
+	.select-message {
+		color: $color-red;
+		margin-bottom: 1em;
+	}
+
 	input[type="text"],
 	input[type="email"],
-	input[type="password"] {
+	input[type="password"],
+	select {
 		border: 1px solid #DFDCDC;
 		border-radius: 4px;
 		max-width: 28em;

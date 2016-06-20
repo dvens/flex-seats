@@ -4,11 +4,11 @@
 	
 	$users = getUsers($conn);
 
-	if( isset($_POST['delete']) ) {
+	if( isset($_POST['deleteUser']) ) {
 
-		$user = $_POST['userid'];
+		$userID = (isset($_POST['userid']) ? $_POST['userid'] : null );
 
-		if($user === $_SESSION['userID']) {
+		if($userID === $_SESSION['userID']) {
 			
 			$_SESSION['formError'] = 'You cannot delete your own account';
 			header('Location: ?page=admin');
@@ -20,12 +20,21 @@
 	    $stmt = $conn->prepare($sql);
 	    
 	    //Bind the values;
-	    $stmt->bindValue(':userID', $user);
+	    $stmt->bindValue(':userID', $userID);
 	 	
 	    // Fetch the query
 	    $stmt->execute();
 
-	    $_SESSION['formMessage'] = 'The user with id '. $user . ' is succesfully deleted.';
+	    $sql = 'DELETE FROM calendar WHERE userID = :userID';
+	    $stmt = $conn->prepare($sql);
+	    
+	    //Bind the values;
+	    $stmt->bindValue(':userID', $userID);
+	 	
+	    // Fetch the query
+	    $stmt->execute();
+
+	    $_SESSION['formMessage'] = 'The user with id '. $userID . ' is succesfully deleted.';
 		header('Location: ?page=admin');
 		exit;
 
