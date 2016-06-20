@@ -168,6 +168,15 @@
 		.icon {
 			padding: 5px 10px;
 			margin-right: 1em;
+
+			&.is--active {
+				background-color: $color-blue;
+
+				svg {
+					fill: $color-white;
+				}
+
+			}
 		}
 
 		svg {
@@ -191,7 +200,13 @@
 	}
 		
 	.calendar__legend-buttons {
-		float: right;
+		float: none;
+
+		@media only screen and (min-width: em($breakpoint-small)) {
+				
+			float: right;
+
+		}
 	}
 
 	.calendar__date {
@@ -347,5 +362,9 @@
 			font-weight: $font-weight-regular;
 			display: block;
 		}
+
+	}
+	
+	.calendar--full {
 
 	}

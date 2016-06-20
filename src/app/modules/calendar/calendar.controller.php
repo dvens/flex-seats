@@ -13,6 +13,8 @@
 	$pageData = getPageData($fullDate, $conn);
 	$amountEmployees = getEmployees($fullDate, $conn);
 
+	$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
 	function getMonth($year, $month, $conn) {
 
 	    $amountDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);

@@ -1,9 +1,9 @@
 <section class="page">
 
 	<header class="page__header">
-		<h2>Home</h2>
+		<h2>Calendar</h2>
 	</header>
 
-	<?php $app->loadModule('calendar', 'boxed'); ?>
+	<?php $app->loadModule('calendar', 'full'); ?>
 	
 </section>
