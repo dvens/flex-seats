@@ -1,0 +1,124 @@
+.legend {
+	background-color: $color-white;
+	padding: 1em 0;
+	overflow: hidden;
+	text-align: center;
+	
+	ul {
+		list-style: none;
+		margin-bottom: 0.5em;
+	}
+
+	li {
+		display: inline-block;
+		color: $color-gray-dark;
+		font-size: 0.75em;
+		text-transform: uppercase;
+		padding-left: 1.2em;
+		padding-right: 1em;
+		position: relative;
+
+		&:nth-child(1) {
+			
+			&:before {
+				background-color: $color-green;
+			}
+
+		}
+
+		&:nth-child(2) {
+			
+			&:before {
+				background-color: $color-orange;
+			}
+
+		}
+
+		&:nth-child(3) {
+			
+			&:before {
+				background-color: $color-red;
+			}
+
+		}
+
+		&:before {
+			background-color: $color-gray;
+			position: absolute;
+			content: "";
+			border-radius: 50%;
+			height: 10px;
+			left: 0px;
+			top: calc(50% - 5px);
+			width: 10px;
+		}
+
+	}
+
+	a {
+		background-color: #F2F2F2;
+		border-radius: 4px;
+		color: $color-blue;
+		font-size: 0.75em;
+		font-weight: $font-weight-bold;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 5px 10px;
+
+		transition: all .2s;
+
+		&:hover,
+		&:focus {
+			background-color: $color-blue;
+			color: $color-white;
+
+			svg {
+				fill: $color-white;
+			}
+		}
+
+	}
+
+	.icon {
+		padding: 5px 10px;
+		margin-right: 1em;
+
+		&.is--active {
+			background-color: $color-blue;
+
+			svg {
+				fill: $color-white;
+			}
+
+		}
+	}
+
+	svg {
+		fill: $color-blue;
+		position: relative;
+		top: 4px;
+	}
+
+	@media only screen and (min-width: em($breakpoint-small)) {
+		
+		padding: 0.8em;
+
+		ul {
+			float: left;
+			margin-bottom: 0;
+			margin-top: 2px;
+		}
+
+	}
+
+}
+	
+.legend__buttons {
+	float: none;
+
+	@media only screen and (min-width: em($breakpoint-small)) {
+			
+		float: right;
+
+	}
+}
