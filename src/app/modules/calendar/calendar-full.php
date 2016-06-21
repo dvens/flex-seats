@@ -1,4 +1,4 @@
-<section class="calendar calendar--full js--calendar">
+<section class="calendar calendar--full">
 
 	<div class="calendar__month-picker">
 		
@@ -50,41 +50,85 @@
 		</div>
 
 	</div>
-      
-	<div class="calendar__dates">
+    
+    <form action="?page=<?php echo $page; ?>" method="post">
+		<div class="calendar__dates">
 
-		<ul>
-			<?php forEach($dates as $key => $date) {  ?>
-
-				<li class="calendar__date <?php echo ($date['status'] ? '' : 'calendar__date--out'); ?> <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
+			<ul>
+				<?php forEach($dates as $key => $date) {  ?>
 					
-					<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
-					
-						<i class="calendar__indicator"></i>
-					
-						<time>
-							<?php echo $key ?>
-							<span><?php echo $date['day'] ?></span>
-						</time>
-					
-					</a>
+					<?php if($date['status'] === 'out') { ?>
+						
+						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date calendar__date--out">
 
-				</li>
+							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
 
-			<?php } ?>
-		</ul>
-		
-	</div>
+							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
+							
+								<time>
+									<?php echo $key ?>
+									<span><?php echo $date['day'] ?></span>
+								</time>
+							
+							</label>
 
-	<section class="grid__container">
-		
-		<h2 class="title title--secondary">Booking</h2>
-	
-		<form action="?page=<?php echo $page; ?>" method="post">
-			<input name="date" type="hidden" value="<?php echo $year .'-'. $month . '-' . $day ?>">
-			<button name="action" value="no" type="submit" class="button--highlighted">yes</button>	
-		</form>
-		
-	</section>
+						</li>
+
+					<?php } ?>
+
+					<?php if($date['status'] === 'office') { ?>
+						
+						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date">
+
+							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
+
+							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
+							
+								<time>
+									<?php echo $key ?>
+									<span><?php echo $date['day'] ?></span>
+								</time>
+							
+							</label>
+
+						</li>
+
+					<?php } ?>
+					
+					<?php if($date['status'] === 'away') { ?>
+						
+						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?> class="calendar__date calendar__date--away">
+
+							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
+
+							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
+							
+								<time>
+									<?php echo $key ?>
+									<span><?php echo $date['day'] ?></span>
+								</time>
+							
+							</label>
+
+						</li>
+
+					<?php } ?>
+
+				<?php } ?>
+			</ul>
+			
+		</div>
+
+		<section class="grid__container">
+			
+			<h2 class="title title--secondary">Select your status</h2>
+			
+			<button name="away" type="submit" class="button--highlighted">away</button>
+			<button name="out" type="submit" class="button--highlighted">out of office</button>	
+			<button name="office" type="submit" class="button--highlighted button--pushed">at the office</button>
+			
+		</section>
+
+	</form>
 
 </section>

@@ -40,11 +40,12 @@
 			$dates[$day]['day'] = $date->format('D');
 			$dates[$day]['day-full'] = $date->format('d');
 			$dates[$day]['date'] = $date->format('y-m-d');
-			$dates[$day]['status'] = true;
+			$dates[$day]['status'] = 'office';
+			$dates[$day]['disabled'] = false;
 
 			if( $dates[$day]['day'] === 'Sat' || $dates[$day]['day'] === 'Sun' ) {
 
-				$dates[$day]['status'] = 'enabled';
+				$dates[$day]['disabled'] = true;
 
 			}
 
@@ -52,7 +53,7 @@
 				
 				if ($result['calendarDate'] === '20'.$dates[$day]['date']) {
 			    	
-			    	$dates[$day]['status'] = false;
+			    	$dates[$day]['status'] = $result['status'];
 
 				} 
 

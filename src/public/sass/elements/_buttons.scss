@@ -35,11 +35,18 @@ button {
 		button {
 			float: left;
 			width: 50%;
+			position: relative;
 		}
 
-		.button:first-child,
-		button:first-child {
-			border-right: 1px solid $color-gray-light;
+		.button:first-child:after,
+		button:first-child:after {
+			content: "";
+			background-color: $color-gray-light;
+			height: 100%;
+			top: 0;
+			right: 0;
+			position: absolute;
+			width: 1px;
 		}
 	}
 

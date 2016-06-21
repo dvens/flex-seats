@@ -42,8 +42,6 @@
 
 		if($status === 'no') {
 
-			$statusMessage = 'home';
-
 			$sql = 'DELETE FROM calendar WHERE userID = :userID AND calendarDate = :calendarDate';
 		    $stmt = $conn->prepare($sql);
 		    

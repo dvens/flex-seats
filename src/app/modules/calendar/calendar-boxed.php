@@ -56,20 +56,60 @@
 		<ul>
 			<?php forEach($dates as $key => $date) {  ?>
 
-				<li class="calendar__date <?php echo ($date['status'] ? '' : 'calendar__date--out'); ?> <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
-					
-					<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
-					
-						<i class="calendar__indicator"></i>
-					
-						<time>
-							<?php echo $key ?>
-							<span><?php echo $date['day'] ?></span>
-						</time>
-					
-					</a>
+				<?php if($date['status'] === 'out') { ?>
+					<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date calendar__date--out <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
+						
+						<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
+						
+							<i class="calendar__indicator"></i>
+						
+							<time>
+								<?php echo $key ?>
+								<span><?php echo $date['day'] ?></span>
+							</time>
+						
+						</a>
 
-				</li>
+					</li>
+				<?php } ?>
+
+				<?php if($date['status'] === 'office') { ?>
+					
+					<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?> class="calendar__date <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
+						
+						<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
+						
+							<i class="calendar__indicator"></i>
+						
+							<time>
+								<?php echo $key ?>
+								<span><?php echo $date['day'] ?></span>
+							</time>
+						
+						</a>
+
+					</li>
+
+				<?php } ?>
+
+				<?php if($date['status'] === 'away') { ?>
+					
+					<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?> class="calendar__date calendar__date--away <?php echo (matchDay($date['date'], $fullDate) ? 'is--active' : ''); ?>">
+						
+						<a class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>" href="<?php echo '?page=home&month='. $month . '&year='. $year . '&day='. $date['day-full'] ?>">
+						
+							<i class="calendar__indicator"></i>
+						
+							<time>
+								<?php echo $key ?>
+								<span><?php echo $date['day'] ?></span>
+							</time>
+						
+						</a>
+
+					</li>
+					
+				<?php } ?>
 
 			<?php } ?>
 		</ul>
@@ -78,10 +118,16 @@
 	
 	<section class="calendar__content grid__container">
 		
-		<?php if($pageData['status'] === 'home') { ?>
+		<?php if($pageData['status'] === 'out') { ?>
 		
 			<h2 class="title">
 				<span class="is--active">status:</span> working out of the office
+			</h2>
+
+		<?php } elseif($pageData['status'] === 'away') { ?>
+
+			<h2 class="title">
+				<span class="is--away">status:</span> not available today
 			</h2>
 
 		<?php } else { ?>
@@ -118,7 +164,7 @@
 
 	<section class="grid__container">
 
-		<?php if($pageData['status'] === 'home') { ?>
+		<?php if( $pageData['status'] === 'out' || $pageData['status'] === 'away') { ?>
 		
 			<h2 class="title title--secondary">are you working at the office?</h2>
 		
