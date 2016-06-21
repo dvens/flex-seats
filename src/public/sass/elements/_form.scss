@@ -49,7 +49,8 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="password"],
-	select {
+	select,
+	textarea {
 		border: 1px solid #DFDCDC;
 		border-radius: 4px;
 		max-width: 28em;

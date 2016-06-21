@@ -1,3 +1,110 @@
 .desks {
 	
+	.legend {
+
+		margin-bottom: 1em;
+		
+		li:nth-child(1):before {
+			background-color: #E2E1E1;
+		}
+
+		li:nth-child(2):before {
+			background-color: #E2E1E1;
+			border: 2px solid $color-blue;
+		}
+
+		li:nth-child(3):before {
+			background-color: $color-blue;
+		}
+		
+	}
+
 }
+
+	.desks__group {
+		display: inline-block;
+		padding: 0.5em;
+		text-align: center;
+		width: 50%;
+
+		h2 {
+			color: #373737;
+			font-size: 1em;
+			margin-bottom: 0.5rem;
+		}
+
+		ul {
+			list-style: none;
+			max-width: 8em;
+			margin: 0 auto;
+			width: 100%;
+		}
+
+		li {
+			display: inline-block;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			position: relative;
+			transform-origin: center center;
+
+			&:nth-child(3n) {
+				margin-right: 0px;
+			}
+
+			&:nth-child(n+4) {
+				transform: rotate(180deg);
+				margin-bottom: 0;
+			}
+		}
+
+		input {
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+		}
+
+		input:checked + label {
+			border: 2px solid $color-blue;
+		}
+
+		input:focus + label {
+			border-bottom: 2px solid $color-gray;
+		}
+
+
+		a,
+		label {
+			border-radius: 4px 4px 0px 0px;
+			background-color: $color-gray-light;
+			display: block;
+			height: 2em;
+			width: 2em;
+
+			&.is--active {
+				cursor: pointer;
+				background-color: $color-blue;
+			}
+		}
+
+		@media only screen and (min-width: em($breakpoint-small)) {
+			
+			width: 33.333%;
+
+			h2 {
+				font-size: 1.1em;
+			}
+
+			ul {
+				max-width: 13em;
+			}
+
+			a,
+			label {
+				height: 3em;
+				width: 3em;
+			}
+
+		}
+
+	}
