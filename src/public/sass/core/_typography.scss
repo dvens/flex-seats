@@ -20,7 +20,7 @@ html, body, button {
 
 html {
 	color: $color-gray;
-	font-family: $font-family-open-sans;
+	font-family: Helvetica, Arial, sans-serif;
 	font-weight: $font-weight-regular;
 	font-size: $font-size-full;
 	line-height: 1.36;
@@ -32,8 +32,17 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-	font-family: $font-family-source-sans;
 	text-transform: $font-uppercase;
+}
+
+.wf-active {
+
+	font-family: $font-family-open-sans;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font-family-source-sans;
+	}
+
 }
 
 h1, .-h1 {
