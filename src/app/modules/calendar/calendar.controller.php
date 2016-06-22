@@ -12,6 +12,7 @@
 	$dates = getMonth($year, $month, $conn);
 	$pageData = getPageData($fullDate, $conn);
 	$amountEmployees = getEmployees($fullDate, $conn);
+	$amountDesks = getDesks($conn);
 
 	$page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
@@ -94,7 +95,45 @@
 
 	    $amountActivePeople = $result['amount']; 
 
-	    return $amountPeople - $amountActivePeople + 26;
+	    return $amountPeople - $amountActivePeople;
+
+	}
+
+	function getDesks($conn) {
+
+		$amountFlexDesks = 0;
+		$amountFixedDesks = 0;
+
+		$flexstatus = 'flex';
+		$fixedstatus = 'fixed';
+
+		$sql = 'SELECT count(*) as amount FROM desk WHERE status = :flexstatus';
+	    $stmt = $conn->prepare($sql);
+
+	    $stmt->bindValue(':flexstatus', $flexstatus);
+	    
+	    //Execute query
+	    $stmt->execute();
+	    
+	    //Fetch the query.
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	    $amountFlexDesks = $result['amount'];
+
+	    $sql = 'SELECT count(*) as amount FROM desk WHERE status = :fixedstatus';
+	    $stmt = $conn->prepare($sql);
+
+	    $stmt->bindValue(':fixedstatus', $fixedstatus);
+	    
+	    //Execute query
+	    $stmt->execute();
+	    
+	    //Fetch the query.
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	    $amountFixedDesks = $result['amount'];
+
+	    return $amountFlexDesks + $amountFixedDesks - $amountFixedDesks;
 
 	}
 
