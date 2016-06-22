@@ -46,9 +46,37 @@
 		$id = (isset($_GET['detail']) ? $_GET['detail'] : '');
 		$desk = getDesk($id, $conn);
 
-		if(empty($id)) {
+		if(empty($id) || $desk['userID'] === '0' || empty($desk)) {
 			header('Location: ?page=404');
 		}
+
+	}
+
+	if( isset($_POST['delete']) ) {
+
+		$id = (isset($_POST['userId']) ? $_POST['userId'] : '');
+		$deskID = (isset($_GET['detail']) ? $_GET['detail'] : '');
+		$status = 'flex';
+		$description = '';
+		$userID = 0;
+		
+		if( $id !== $_SESSION['userID']) {
+
+			$_SESSION['formError'] = 'You cannot delete this booking you\'re not the owner.';
+			return;
+
+		}
+
+		$sql = 'UPDATE desk SET description = :description, status = :status, userID = :userID WHERE ID = :id';
+		$stmt = $conn->prepare($sql);
+
+		//Bind the values;
+    	$stmt->bindValue(':description', $description);
+    	$stmt->bindValue(':userID', $userID);
+    	$stmt->bindValue(':status', $status);
+    	$stmt->bindValue(':id', $deskID);
+
+    	$stmt->execute();
 
 	}
 
