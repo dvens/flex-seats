@@ -10,13 +10,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900|Open+Sans:700,400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="./css/styles.min.css">
 
-	<script>
-		document.createElement('header');
-		document.createElement('section');
-		document.createElement('main');
-		document.createElement('nav');
-	</script>
-	
 </head>
 
 <body>
