@@ -1,11 +1,12 @@
 # Damco Seats
 * Link to the Damco Web Application: [damco.dylanvens.com](http://damco.dylanvens.com)
+* To register an account use the validation code: #damco25
 
 ## Introduction
 Damco Seats is an application where the employees of Damco can book their desks and are able to book their days to determine if they are at the office or not. 
 
 ## Problem
-Damco has an IT departement in The Hague with a limited o ce space available. The partement has two kind of desks:  rst serve basis called  ex desks and some people with a  xed desk. People that are travelling far from the o ce  nd out that there are no desks available because of the  rst come  rst serve basis. They asked me to build a tool/system that will solve this problem
+Damco has an IT departement in The Hague with a limited office space available. The partement has two kind of desks: first serve basis called flex desks and some people with a fixed desk. People that are travelling far from the office find out that there are no desks available because of the first come first serve basis. They asked me to build a tool/system that will solve this problem.
 
 ## Before getting started
 It's recommended to have some kind of knowledge of the following things:
@@ -133,7 +134,67 @@ To call a template use the following function
 ## Feature branches
 In this section I will tell you what you can find in each feature branch.
 
-### Branch Calendar
+### Branch: Development
+Everytime you've completed a module or other feature you can push it to this branch to test the module on. If the module is completed you can merge the development to the master branch !but only for deployement.
+
+### Branch: Calendar
+This branch contains the main calendar on the homepage. The calendar lets the user update his status to 'working from home' or 'working at the office'. 
+At this calendar the user can see if there are any seats available. 
+
+> Mobile
+![first load](screenshots/1.png)
+![first load](screenshots/2.png)
+
+> Desktop
+![first load](screenshots/11.png)
+
+### Branch: feature/login
+This branch contains the login/register flow where the user can validate him/herself to register at Damco Seats.
+
+> Desktop
+![first load](screenshots/16.png)
+![first load](screenshots/17.png)
+![first load](screenshots/18.png)
+
+### Branch: feature/admin
+This branch contains the admin panel where the administrator can add/delete desks, users and rooms.
+
+> Mobile
+![first load](screenshots/7.png)
+![first load](screenshots/8.png)
+![first load](screenshots/9.png)
+
+> Desktop
+![first load](screenshots/14.png)
+
+### Branch: feature/calendar-full
+This branch contains the calendar where the user can book his vacation or other days.
+
+> Mobile
+![first load](screenshots/5.png)
+
+> Desktop
+![first load](screenshots/13.png)
+
+### Branch: feature/account
+This branch contains the account settings page where the user can update his account settings.
+
+> Mobile
+![first load](screenshots/6.png)
+
+> Desktop
+![first load](screenshots/15.png)
+
+### Branch: feature/desks
+This branch contains the booking of desk the user can select multiple desks to book them for him and his clients.
+
+> Mobile
+![first load](screenshots/4.png)
+
+> Desktop
+![first load](screenshots/12.png)
+
+
 
 
 ## Speedtest
