@@ -205,27 +205,115 @@ This branch contains the booking of desk the user can select multiple desks to b
 
 ![first load](screenshots/12.png)
 
+### Branch: feature/pageloader
+I added a SPA page because the entire website is progressive enhanced, so I added some fancy page loading to the application. 
+The Javascript is build with CommonJS pattern. Then I added a custom moduleInitializer that is loading the module that you give to the initializer. 
 
+* How to setup a CommonJS module
+```javascript
+
+function Calendar(element) {
+
+    var _this = this;
+    var _element = element;
+    var _calendarDates = _element.querySelector('.calendar__dates ul');
+    var _activeItem = _calendarDates.querySelector('.is--active');
+
+    _this.init = function() {
+
+        initEvents();
+        setScrollPosition();
+
+    }
+
+    function initEvents (){
+
+        window.addEventListener('resize', function(e){
+            
+            setScrollPosition();
+
+        });
+
+    }
+
+    function setScrollPosition() {
+
+        _calendarDates.scrollLeft = (_activeItem.offsetWidth - _calendarDates.offsetWidth) + _activeItem.offsetLeft + (_calendarDates.offsetWidth / 2 - _activeItem.offsetWidth / 2);
+
+    }
+
+    _this.init();
+
+}
+
+module.exports = Calendar;
+
+```
+
+* How to call a module with moduleInitializer (I prefix elements that have javascript added to them with .js--modulename).
+
+```javascript
+
+var moduleInitializer = require('./helpers/moduleinit');
+
+// Require modules
+var Calendar = require('./modules/calendar');
+
+moduleInitializer( '.js--calendar', Calendar );
+
+```
+
+### Branch: feature/webfontloader
+* I used Web Font Loader from type kit and used the following article [Web Font Loader](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/)
+* Web Font Loader loads Google fonts from the Google font library.
+* I didn't implemented it in the master branch because it still has a couple of bugs.
+
+#### How I implemented it 
+* Npm installed Web Font Loader
+
+> Used the following code 
+
+```javascript
+var webFont = require('webfontloader');
+
+webFont.load({
+  
+  google: {
+    families: ['Open Sans'] //Latin is the script type
+  }
+
+});
+
+```
+
+> Used the following code in SASS
+
+```
+.wf-active {
+    font-family: $font-family-open-sans;
+}
+
+```
 
 
 ## Speedtest
-![first load](screenshots/first-load.png)
-> Data
+I did a speedtest on the homepage with a Regular 2G Throttle.
+* Throttle: Regular 2G (300ms, 250kbs, 50kbs).
+* First paint: 1.66s
+* DomContentloaded: 1.75s
+* loadEvent: 2.03s
 
-Throttle: Regular 2G (300ms, 250kbs, 50kbs).
-first paint: 1.66s
-Domcontentloaded: 1.75s
-loadevent: 2.03s
-
-
-
-
-
+![first load](screenshots/10.png)
 
 ## TODO's and Features
 There are still somethings that can be improved or can be added to the application. Here is a list of things that I could add:
-
-- [ ] Test
+- [ ] Add a calendar to the desk page so the user can book for a long period of time.
+- [ ] Add criticial CSS to each PHP file
+- [ ] Remove desks when a room is being removed
+- [ ] Add UI transition to the calendar (page transition when a new date is being loaded).
+- [ ] Add a service worker to cache certain files (css and javascript file).
+- [ ] If it is usefull make a Progressive WebApp out of Damco Seats (otherwise for learing purposes).
 
 ## Bug fixes
-- [ ] Test
+- [ ] Bug fix the webfontloader
+- [ ] Test the calendar scrollTo (still a bit laggy)
