@@ -142,16 +142,19 @@ This branch contains the main calendar on the homepage. The calendar lets the us
 At this calendar the user can see if there are any seats available. 
 
 > Mobile
+
 ![first load](screenshots/1.png)
 ![first load](screenshots/2.png)
 
 > Desktop
+
 ![first load](screenshots/11.png)
 
 ### Branch: feature/login
 This branch contains the login/register flow where the user can validate him/herself to register at Damco Seats.
 
 > Desktop
+
 ![first load](screenshots/16.png)
 ![first load](screenshots/17.png)
 ![first load](screenshots/18.png)
@@ -160,38 +163,46 @@ This branch contains the login/register flow where the user can validate him/her
 This branch contains the admin panel where the administrator can add/delete desks, users and rooms.
 
 > Mobile
+
 ![first load](screenshots/7.png)
 ![first load](screenshots/8.png)
 ![first load](screenshots/9.png)
 
 > Desktop
+
 ![first load](screenshots/14.png)
 
 ### Branch: feature/calendar-full
 This branch contains the calendar where the user can book his vacation or other days.
 
 > Mobile
+
 ![first load](screenshots/5.png)
 
 > Desktop
+
 ![first load](screenshots/13.png)
 
 ### Branch: feature/account
 This branch contains the account settings page where the user can update his account settings.
 
 > Mobile
+
 ![first load](screenshots/6.png)
 
 > Desktop
+
 ![first load](screenshots/15.png)
 
 ### Branch: feature/desks
 This branch contains the booking of desk the user can select multiple desks to book them for him and his clients.
 
 > Mobile
+
 ![first load](screenshots/4.png)
 
 > Desktop
+
 ![first load](screenshots/12.png)
 
 
