@@ -295,6 +295,39 @@ webFont.load({
 
 ```
 
+## Features from the courses of the minor Everything Web
+In this secion I will explain the things that I've learned during the the minor Everything Web and how I'he implemented them into my app. 
+
+### Web App From Scratch
+* I used CommonJS to define multiple modules and used constructors to make classes. (these modules are now useable in other projects too). 
+* I made a pageloader with vanilla Javascript it uses XHR and the new ES6 promise. The page loaders does a GET to get the page data and transitions the page without refreshing. 
+* I used history.pushstate api to change the url when a page is being loaded. 
+
+### CSS To The Rescue
+* Used BEM to define different modules in CSS
+* Used SASS to define the different HTML elements and modules.
+* Used smart selectors like 'input + label and input ~ label'.
+* Used CSS animations (with cubic-bezier) for the loading spinner and to transition different UI elements. 
+* Used Mobile First Design approach added media queries only for desktop.
+* Used semantic html.
+
+### Browser Technology
+* Used PHP to render the templates server side
+* Build the Application PE in the following order HTML, CSS & Javascript. 
+* Used MySQL to store and retrieve the data. 
+* Made a module/view loader in PHP for server side rendering.
+* Made the application accessible with only a keyboard. 
+* Feature detection on ClassList and History Pushstate.
+* The core functionality (calendar) works without Javascript. 
+* Added enhancements for people with a newer browser (page loading, transitions, menu with javascript on mobile).
+
+### Performance matters 
+* Added web font loader to load in Google Fonts.
+* Focussed server side rendering because of speed. 
+* Used Gulp to transform SASS into CSS (minified).
+* Used Gulp Browserify to load/compile different modules.
+* Used Gulp imagemin to compile and minify different SVG's.
+* Optimized HTML and CSS didn't use selectors longer than 3 deep.
 
 ## Speedtest
 I did a speedtest on the homepage with a Regular 2G Throttle.
