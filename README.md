@@ -20,7 +20,7 @@ For this application I used to following software to run a MySQL database and an
 * Step 1 - clone or download the repo [clone](https://github.com/dvens/flex-seats.git) & [download](https://github.com/dvens/flex-seats/archive/master.zip)
 
 * Step 2 - Create database and import SQL file
-First open Xampp or any other tool that runs an Apache server and create a database called 'Damco'. After you're finished download the [Damco SQL file](https://github.com/dvens/flex-seats/archive/) file. Next change the connection.php to your own database settings:
+First open Xampp or any other tool that runs an Apache server and create a database called 'Damco'. After you're finished download the [Damco SQL file](https://github.com/dvens/flex-seats/blob/master/screenshots/damco.sql) file. Next change the connection.php to your own database settings:
 
 ```php
 <?php 
