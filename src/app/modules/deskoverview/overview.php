@@ -25,8 +25,8 @@
 					<?php if($desk['status'] === 'flex') { ?>
 						
 						<li>
-							<input id="<?php echo $key; ?>" name="desks[]" value="<?php echo $desk['ID']; ?>" type="checkbox">
-							<label for="<?php echo $key; ?>"></label>
+							<input id="<?php echo $desk['ID']; ?>" name="desks[]" value="<?php echo $desk['ID']; ?>" type="checkbox">
+							<label for="<?php echo $desk['ID']; ?>"></label>
 						</li>
 
 					<?php } else { ?>

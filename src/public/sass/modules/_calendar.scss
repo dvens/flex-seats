@@ -17,13 +17,21 @@
 	}
 
 	.calendar__button {
-		
 		opacity: 1;
-		transition: opacity .2s; 
+		font-size: 0.8125em;
+		transition: opacity .2s;
+		text-decoration: none; 
 
 		&:hover,
 		&:focus {
 			opacity: 0.5;
+		}
+
+		span {
+			color: $color-white;
+			display: inline-block;
+			position: relative;
+			bottom: 0.2em;
 		}
 
 		&--prev {
@@ -94,8 +102,7 @@
 		overflow-y: hidden;
 
 		&[disabled] {
-       		cursor: default;
-       		opacity: 0.4;
+            opacity: 0.4;
 			pointer-events: none !important;
 
 			.calendar__indicator {
@@ -273,7 +280,14 @@
 			width: 20%;
 			
 			label {
+				background-color: $color-green;
 				width: 100%;
+			}
+
+			&[disabled] {
+				label {
+					background-color: $color-gray-light;
+				}
 			}
 
 			&--away {
@@ -289,8 +303,6 @@
 					background-color: $color-orange;	
 				}
 			}
-
-
 
 			input {
 				position: absolute;

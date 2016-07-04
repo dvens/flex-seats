@@ -18,7 +18,6 @@
 	    $stmt->execute();
 
 	    $_SESSION['formMessage'] = 'The room with id '. $roomID . ' is succesfully deleted.';
-		header('Location: ?page=admin');
 		exit;
 
 	}
