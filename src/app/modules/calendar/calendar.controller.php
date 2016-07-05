@@ -41,7 +41,7 @@
 			$dates[$day]['day'] = $date->format('D');
 			$dates[$day]['day-full'] = $date->format('d');
 			$dates[$day]['date'] = $date->format('y-m-d');
-			$dates[$day]['status'] = 'office';
+			$dates[$day]['status'] = 'out';
 			$dates[$day]['disabled'] = false;
 
 			if( $dates[$day]['day'] === 'Sat' || $dates[$day]['day'] === 'Sun' ) {

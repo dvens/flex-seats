@@ -22,7 +22,7 @@
 
 		if($status === 'yes') {
 
-			$statusMessage = 'out';
+			$statusMessage = 'office';
 
 			$sql = 'INSERT INTO calendar (userID, calendarDate, status) VALUES (:userID, :calendarDate, :status)';
 		    $stmt = $conn->prepare($sql);

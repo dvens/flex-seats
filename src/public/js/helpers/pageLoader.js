@@ -21,6 +21,7 @@ function Pageloader() {
 
     _this.init = function( containerID ) {
 
+        // Check if window.pushstate and promises are supported 
         if(!_isSupported) return;
 
         _loader = new Loader();
@@ -133,7 +134,6 @@ function Pageloader() {
 
         }
     }
-
 
     function toggleLoader(elementShow) {
 

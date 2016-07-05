@@ -3,9 +3,9 @@
 }
 
 	.calendar__month-picker {
-		background-color: $color-blue-dark;
-		color: $color-white;
+		color: $color-gray-dark;
 		height: 2.2em;
+		margin-bottom: 1.5625em;
 		text-transform: uppercase;
 		text-align: center;
 		padding: 0.5em 0.8em;
@@ -13,11 +13,31 @@
 
 		p {
 			display: inline-block;
+			font-size: 1.125em;
+			font-weight: $font-weight-bold;
 		}
+
+		svg {
+			display: inline-block;
+			fill: $color-gray-dark;
+		}
+
+		a {
+			color: $color-gray-dark;
+			padding-top: 5px;
+			text-decoration: none;
+		}
+
+		span {
+			font-size: 0.9375em;
+			padding: 0 0.5em;
+			top: -3px;
+			position: relative;
+		}
+
 	}
 
 	.calendar__button {
-		
 		opacity: 1;
 		transition: opacity .2s; 
 
@@ -36,129 +56,57 @@
 	}
 
 	.calendar__dates {
-		background-color: #f2f2f2;
-		height: 4.5em;
-		width: 100%;
-
-		ul {
-			height: 100%;
-			overflow-x: scroll;
-			position: relative;
-			padding: 0.5em;
-			width: 100%;
-			white-space: nowrap;
-			
-		}
-
-		@media only screen and (min-width: em($breakpoint-small)) {
-			
-			height: 5.5em;
-		
-		}
-	}
-
-	.calendar__indicator {
-		border-radius: 50%;
-		background-color: $color-green;
-		height: 10px;
-		position: absolute;
-		top: 5px;
-		right: 8px;
-		width: 10px;
-
-		transform: scale(1);
-		transition: all .6s;
+		list-style: none;
+		padding: .5em .8em;
 	}
 	
-	.calendar__arrow {
-		position: relative;
-		width: 8.4375em;
-
-		&:before {
-			left: calc(50% - 10px);
-			border: solid transparent;
-			content: "";
-			position: absolute;
-			border-top-color: $color-red;
-			border-width: 10px;
-		}
-	}
-
 	.calendar__date {
-		display: inline-block; 
-		top: 50%;
-		transform: translateY(-50%);
+		background-color: $color-white;
+		box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.04);
+		border-left: 4px solid $color-orange;
+		display: block; 
+		margin-bottom: 1em;
+		overflow: hidden;
 		position: relative;
 		padding: 0 0.2em;
-		overflow-x: hidden;
-		overflow-y: hidden;
-
+		
 		&[disabled] {
        		cursor: default;
-       		opacity: 0.4;
 			pointer-events: none !important;
-
-			.calendar__indicator {
-				display: none;
-			}
 		}
 
-		&.is--active {
-			
-			position: relative;
-
-			a {
-				top: 0.5em;
-				width: 8em;
-			}
-
-			.calendar__indicator {
-				transform: scale(50);
-			}
+		&.is--active {	
 
 		}
 
 		.is--today {
-			border-bottom: 3px solid $color-blue;;
-		}
-
-		&.calendar__date--out {
 			
-			i {
-				background-color: $color-orange;
-			}
-
 		}
 
-		&.calendar__date--away {
-			
-			i {
-				background-color: $color-red;
-			}
-
+		&--office {
+			border-left: 4px solid $color-green;
 		}
 
-		a,label {
-			background-color: $color-gray-light;
-			color: $color-white;
-			text-align: center;
+		&--away {
+			border-left: 4px solid $color-red;
+		}
+
+		a,
+		label {
 			display: block;
-			height: 3.375em;
+			height: 4em;
 			text-decoration: none;
-			width: 4.5em;
-
-			&:hover .calendar__indicator,
-			&:focus .calendar__indicator {
-				transform: scale(50);
-			}
+			width: 100%;
 		}
 
 		time {
-			display: block;
-			padding-top: 0.2em;
+			color: $color-gray-dark;
 			font-size: 1.125em;
 			font-weight: $font-weight-bold;
-			position: relative;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
 		}
 
 		span {
@@ -168,27 +116,23 @@
 			display: block;
 		}
 
-		@media only screen and (min-width: em($breakpoint-small)) {
-			
-			a, label {
-				height: 4em;
-				width: 5em;
-			}
+	}
 
-			time {
-				font-size: 1.2em;
-				padding-top: 0.5em;
-			}
+	.calendar__date-holder {
+		height: 100%;
+		position: relative;
+		text-align: center;
+		width: 4.5em;
 
-			&.is--active {
-
-				a {
-					top: 0.0em;
-					width: 9em;
-				}
-
-			}
-		
+		&:after {
+			background-color: #ececec;
+			content: "";
+			height: calc(100% - 24px);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			width: 1px;
 		}
 	}
 
@@ -277,7 +221,7 @@
 			}
 
 			&--away {
-
+				
 				label {
 					background-color: $color-red;	
 				}
@@ -289,8 +233,6 @@
 					background-color: $color-orange;	
 				}
 			}
-
-
 
 			input {
 				position: absolute;

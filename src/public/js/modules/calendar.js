@@ -2,13 +2,13 @@ function Calendar(element) {
 
 	var _this = this;
     var _element = element;
-    var _calendarDates = _element.querySelector('.calendar__dates ul');
+    var _calendarDates = _element.querySelector('.calendar__dates');
     var _activeItem = _calendarDates.querySelector('.is--active');
 
     _this.init = function() {
 
-    	initEvents();
-    	setScrollPosition();
+    	//initEvents();
+    	//setScrollPosition();
 
     }
 

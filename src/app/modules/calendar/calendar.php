@@ -1,5 +1,5 @@
-<!-- Normal calendar -->
-<?php if ($moduleType === 'boxed') include('calendar-boxed.php'); ?>
+<!-- Include list if module type is list -->
+<?php if ($moduleType === 'list') include('calendar-list.php'); ?>
 
-<!-- Editable calendar -->
+<!-- Include editable calendar if module type is full -->
 <?php if ($moduleType === 'full') include('calendar-full.php'); ?>

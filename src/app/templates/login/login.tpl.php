@@ -1,10 +1,4 @@
 <section class="page">
-
-	<header class="page__header">
-		
-		<h2>Login</h2>
-
-	</header>
 	
 	<section class="login">
 		
