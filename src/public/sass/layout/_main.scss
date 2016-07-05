@@ -1,11 +1,10 @@
 main {
     opacity: 1;
   	visibility: visible;
+  	padding-top: 7.5em;
 
   	transform: translateY(0px);
-
   	transition: all .3s ease-in-out;
-
   	transition-delay: .2s;
 
   	&.is--transitioning {
@@ -14,6 +13,10 @@ main {
     	opacity: 0;
     	visibility: hidden;
 
+  	}
+
+  	@media only screen and (min-width: em($breakpoint-small)) {
+		padding-top: 8.5em;
   	}
 }	
 

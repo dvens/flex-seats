@@ -2,11 +2,14 @@
 	
 	<div class="header__container">
 		
-		<h1 class="header__logo">
-			<a ajax-link href="/">
-				Damco-Seats
+		<?php if( (isset($_SESSION['user'])) ) { ?>
+			
+			<a ajax-link href="/?page=account" class="header__profile">
+				<img src="./images/user.jpg" alt="user">
+				<p>Dylan</p> 
 			</a>
-		</h1>
+
+		<?php } ?>
 	
 		<button class="header__navigation-toggle">
 			<span></span>
@@ -26,7 +29,6 @@
 				<?php } else { ?>
 
 					<li><a ajax-link class="<?php echo ($app->navigationActive('home') ? 'is--active' : ''); ?>" href="/">Home</a></li>
-					<li><a ajax-link class="<?php echo ($app->navigationActive('desks') ? 'is--active' : ''); ?>" href="/?page=desks">Desks</a></li>
 					<li><a ajax-link class="<?php echo ($app->navigationActive('calendar') ? 'is--active' : ''); ?>" href="/?page=calendar">Calendar</a></li>
 					
 					<?php if( $_SESSION['userRole'] === 'admin' ) { ?>
@@ -35,7 +37,7 @@
 					
 					<?php } ?>
 
-					<li><a ajax-link class="<?php echo ($app->navigationActive('account') ? 'is--active' : ''); ?>" href="/?page=account">Account</a></li>
+					<li><a ajax-link class="<?php echo ($app->navigationActive('account') ? 'is--active' : ''); ?>" href="/?page=account">My Account</a></li>
 					<li><a href="?page=home&logout">Logout</a></li>
 
 				<?php } ?>
