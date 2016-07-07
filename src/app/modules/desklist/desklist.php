@@ -56,7 +56,9 @@
 						
 						<?php foreach ($rooms as $room) { ?>
 							
-							<option value="<?php echo $room['name'] ?>"><?php echo $room['name'] ?></option>
+							<option value="<?php echo $room['name'] ?>">
+								<?php echo $room['name'] ?>
+							</option>
 
 						<?php } ?>
 

@@ -56,7 +56,7 @@
 
 			<?php for ($i=0; $i < $runningDays; $i++) { ?> 
 				
-				<li class="calendar__date"></li>
+				<li class="calendar__date is--hidden"></li>
 
 			<?php } ?>
 		
@@ -68,9 +68,9 @@
 
 					<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
 					
-						<time>
+						<span>
 							<?php echo $key ?>
-						</time>
+						</span>
 					
 					</label>
 
@@ -79,13 +79,16 @@
 			<?php } ?>
 		</ul>
 			
-		<section class="grid__container">
+		<section class="grid__container form">
 			
-			<h2 class="title title--secondary">Select your status</h2>
+			<div class="form__group">
+				<h2>choose your booking</h2>
+				<p>I want to book my selected day/days as:</p>
+			</div>
 			
-			<button name="away" type="submit" class="button--highlighted">away</button>
-			<button name="out" type="submit" class="button--highlighted">out of office</button>	
-			<button name="office" type="submit" class="button--highlighted button--pushed">at the office</button>
+			<button name="away" type="submit" class="button--highlighted">not available</button>
+			<button name="out" type="submit" class="button--highlighted">working at home</button>	
+			<button name="office" type="submit" class="button--highlighted button--pushed">working at the office</button>
 			
 		</section>
 

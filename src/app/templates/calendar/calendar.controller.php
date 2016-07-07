@@ -83,12 +83,12 @@
 	}
 
 	// If selected status is out of office
-	if( isset($_POST['out']) ) {
+	if( isset($_POST['office']) ) {
 
 		$oldDates = array();
 		$newDates = array();
 		$resultDates = array();
-		$statusMessage = 'out';
+		$statusMessage = 'office';
 
 		$sql = 'SELECT calendarDate FROM calendar WHERE userID = :userID';
 	    $stmt = $conn->prepare($sql);
@@ -158,7 +158,7 @@
 
 
 	// If selected status is at the office
-	if( isset($_POST['office']) ) {
+	if( isset($_POST['out']) ) {
 
 		$sql = 'DELETE FROM calendar WHERE userID = :userID AND calendarDate = :calendarDate';
 	    $stmt = $conn->prepare($sql);
