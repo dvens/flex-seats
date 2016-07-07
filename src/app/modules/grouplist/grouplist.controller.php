@@ -1,5 +1,5 @@
 <?php 
-	
+
 	require('./app/core/connection.php');
 	
 	$rooms = getRooms($conn);
@@ -19,8 +19,7 @@
 
 	    $_SESSION['formMessage'] = 'The room with id '. $roomID . ' is succesfully deleted.';
 		header('Location: ?page=admin');
-		exit;
-
+		exit();
 	}
 
 	if( isset($_POST['addRoom']) ) {
@@ -32,7 +31,7 @@
 
 			$_SESSION['formError'] = 'A room has to have a name.';
 	    	header('Location: ?page=admin');
-	    	exit;
+	    	exit();
 
 	    }
 		
@@ -47,11 +46,9 @@
 
 	    // If the server returns a value
 	    if($result){
-
 			$_SESSION['formMessage'] = 'You\'ve succesfully added ' . $roomName;;
 	    	header('Location: ?page=admin');
-	    	exit;
-
+	    	exit();
 	    }
 
 	}

@@ -6,7 +6,7 @@
 			
 			<a ajax-link href="/?page=account" class="header__profile">
 				<img src="./images/user.jpg" alt="user">
-				<p>Dylan</p> 
+				<p><?php echo $_SESSION['user']; ?></p> 
 			</a>
 
 		<?php } ?>

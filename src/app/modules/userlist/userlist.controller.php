@@ -10,7 +10,7 @@
 
 		if($userID === $_SESSION['userID']) {
 			
-			$_SESSION['formError'] = 'You cannot delete your own account';
+			$_SESSION['formWarning'] = 'You cannot delete your own account';
 			header('Location: ?page=admin');
 			exit;
 

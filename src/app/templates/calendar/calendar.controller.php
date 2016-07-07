@@ -7,9 +7,10 @@
 	}
 
 	$dates = isset($_POST['dates']) ? $_POST['dates'] : null;
+	$status = isset($_POST['status']) ? $_POST['status'] : null;
 
 	// If the selected status is away
-	if( isset($_POST['away']) ) {
+	if( $status === 'away' ) {
 
 		$oldAwayDates = array();
 		$newAwayDates = array();
@@ -83,7 +84,7 @@
 	}
 
 	// If selected status is out of office
-	if( isset($_POST['office']) ) {
+	if( $status === 'office'  ) {
 
 		$oldDates = array();
 		$newDates = array();
@@ -158,7 +159,7 @@
 
 
 	// If selected status is at the office
-	if( isset($_POST['out']) ) {
+	if( $status === 'out'  ) {
 
 		$sql = 'DELETE FROM calendar WHERE userID = :userID AND calendarDate = :calendarDate';
 	    $stmt = $conn->prepare($sql);

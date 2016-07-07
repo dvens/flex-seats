@@ -85,10 +85,18 @@
 				<h2>choose your booking</h2>
 				<p>I want to book my selected day/days as:</p>
 			</div>
-			
-			<button name="away" type="submit" class="button--highlighted">not available</button>
-			<button name="out" type="submit" class="button--highlighted">working at home</button>	
-			<button name="office" type="submit" class="button--highlighted button--pushed">working at the office</button>
+
+			<div class="form__group form__group--small">
+				
+				<select name="status">
+			 		<option value="out">working at home</option>
+			 		<option value="away">not available</option>
+			 		<option value="office">working at the office</option>
+				</select>
+
+			</div>
+
+			<button name="save" type="submit" class="button--highlighted">save</button>
 			
 		</section>
 

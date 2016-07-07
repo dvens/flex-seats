@@ -40,7 +40,7 @@
 		<p>To add a desk choose a room to place the desk and select the kind of desk.</p>
 	</div>
 	
-	<form action="<?php echo '?page=' . $_GET['page'] ?>" method="post">
+	<form action="<?php echo '?page=' . $_GET['page'];?>" method="post">
 		
 		<div class="form__group form__group--small">
 				

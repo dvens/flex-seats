@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>success</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="rework" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-14-Copy" transform="translate(-14.000000, -12.000000)" fill="#FFFFFF">
+            <g id="success" transform="translate(14.000000, 12.000000)">
+                <g id="Capa_1">
+                    <path d="M15,0 C6.72923077,0 0,6.72865385 0,15 C0,23.2713462 6.72923077,30 15,30 C23.2707692,30 30,23.2713462 30,15 C30,6.72865385 23.2707692,0 15,0 L15,0 Z M23.3625,9.9975 L14.1317308,20.3821154 C13.9044231,20.6376923 13.5876923,20.7692308 13.2686538,20.7692308 C13.0153846,20.7692308 12.7609615,20.6861538 12.5480769,20.5165385 L6.77884615,15.9011538 C6.28153846,15.5036538 6.20076923,14.7773077 6.59884615,14.2794231 C6.99634615,13.7815385 7.72326923,13.7007692 8.22057692,14.0988462 L13.1342308,18.0294231 L21.6375,8.46346154 C22.0598077,7.98692308 22.7901923,7.94423077 23.2661538,8.36769231 C23.7426923,8.79173077 23.7859615,9.52096154 23.3625,9.9975 L23.3625,9.9975 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

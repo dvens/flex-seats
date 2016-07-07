@@ -12,7 +12,6 @@
 
 	$dates = getMonth($year, $month, $conn);
 	$pageData = getPageData($fullDate, $conn);
-	$amountEmployees = getEmployees($fullDate, $conn);
 	$amountDesks = getDesks($conn);
 	$calendarHeadings = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
