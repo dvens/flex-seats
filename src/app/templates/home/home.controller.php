@@ -20,7 +20,7 @@
 		$status = isset($_POST['action']) ? $_POST['action'] : null;
 		$statusMessage = '';
 
-		if($status === 'yes') {
+		if($status === 'no') {
 
 			$statusMessage = 'office';
 
@@ -40,7 +40,7 @@
 
 		}
 
-		if($status === 'no') {
+		if($status === 'yes') {
 
 			$sql = 'DELETE FROM calendar WHERE userID = :userID AND calendarDate = :calendarDate';
 		    $stmt = $conn->prepare($sql);

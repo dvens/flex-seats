@@ -1,5 +1,9 @@
 <section class="page">
 
+	<div class="page__header">
+		<h1>My account</h1>
+	</div>
+
 	<section class="grid__container form">
 
 		<div class="form__group">

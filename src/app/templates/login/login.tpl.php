@@ -1,4 +1,8 @@
 <section class="page">
+
+	<div class="page__header">
+		<h1>Login</h1>
+	</div>
 	
 	<section class="login">
 		

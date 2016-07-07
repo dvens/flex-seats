@@ -30,10 +30,20 @@ main {
 	}
 
 	.page__header {
-		padding: 1em 0 1.5em 0;
+		padding: 1em 0 0 0;
 		position: relative;
 		text-align: center;
 		width: 100%;
+
+		&--pushed {
+			padding: 1em 0 1.5em 0;
+		}
+
+		h1 {
+			color: $color-gray-dark;
+			font-size: 1.2em;
+			font-family: $font-family-open-sans;
+		}
 
 		a {
 			color: #454545;
@@ -75,6 +85,10 @@ main {
 			}
 
 		}
+
+		@media only screen and (min-width: em($breakpoint-small)) {
+			padding: 1em 0 1.5em 0;
+  		}
 	}
 
 	.page__button-back {

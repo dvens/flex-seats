@@ -18,9 +18,9 @@
 
 		<?php } ?>
 		
-		<p>
+		<h1>
 			<?php echo formatDate('F Y', $year, $month, $day, false); ?>		
-		</p>
+		</h1>
 
 		<?php if($month == '12') { ?>
 			
@@ -39,75 +39,46 @@
 		<?php } ?>
 
 	</div>
+
+	<ul class="calendar__heading">
+		
+		<?php foreach ($calendarHeadings as $heading) { ?>
+			
+			<li><?php echo $heading; ?></li>
+
+		<?php } ?>
+
+	</ul>
     
     <form action="?page=<?php echo $page; ?>" method="post">
-		<div class="calendar__dates">
 
-			<ul>
-				<?php forEach($dates as $key => $date) {  ?>
+		<ul class="calendar__dates">
+
+			<?php for ($i=0; $i < $runningDays; $i++) { ?> 
+				
+				<li class="calendar__date"></li>
+
+			<?php } ?>
+		
+			<?php forEach($dates as $key => $date) {  ?>
 					
-					<?php if($date['status'] === 'out') { ?>
-						
-						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date calendar__date--out">
+				<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date calendar__date--<?php echo $date['status']; ?>">
 
-							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
+					<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
 
-							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
-							
-								<time>
-									<?php echo $key ?>
-									<span><?php echo $date['day'] ?></span>
-								</time>
-							
-							</label>
-
-						</li>
-
-					<?php } ?>
-
-					<?php if($date['status'] === 'office') { ?>
-						
-						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date">
-
-							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
-
-							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
-							
-								<time>
-									<?php echo $key ?>
-									<span><?php echo $date['day'] ?></span>
-								</time>
-							
-							</label>
-
-						</li>
-
-					<?php } ?>
+					<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
 					
-					<?php if($date['status'] === 'away') { ?>
-						
-						<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?> class="calendar__date calendar__date--away">
+						<time>
+							<?php echo $key ?>
+						</time>
+					
+					</label>
 
-							<input name="dates[]" id="<?php echo $key ?>" type="checkbox" value="<?php echo $date['date']; ?>"> 
-
-							<label for="<?php echo $key ?>" class="<?php echo (isCurrentDay($date['date']) ? 'is--today' : '');?>">
-							
-								<time>
-									<?php echo $key ?>
-									<span><?php echo $date['day'] ?></span>
-								</time>
-							
-							</label>
-
-						</li>
-
-					<?php } ?>
-
-				<?php } ?>
-			</ul>
+				</li>
+				
+			<?php } ?>
+		</ul>
 			
-		</div>
-
 		<section class="grid__container">
 			
 			<h2 class="title title--secondary">Select your status</h2>

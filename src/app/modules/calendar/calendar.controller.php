@@ -5,6 +5,7 @@
 	$day = isset($_GET['day']) ? $_GET['day'] : date('d');
 	$month = isset($_GET['month']) ? $_GET['month'] : date('m');
 	$year = isset($_GET['year']) ? $_GET['year'] : date('y');
+	$runningDays = date('N', mktime(0, 0, 0, $month, 1, $year));
 
 	$fullDate = $year . '-' . $month . '-' . $day;
 	$currentMonth = $year . '-' . $month;
@@ -13,13 +14,14 @@
 	$pageData = getPageData($fullDate, $conn);
 	$amountEmployees = getEmployees($fullDate, $conn);
 	$amountDesks = getDesks($conn);
+	$calendarHeadings = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 	$page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 	function getMonth($year, $month, $conn) {
 
-	    $amountDays = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-
+	    $amountDays =  date('t', mktime(0, 0, 0, $month, 1, $year));
+	    
 	    $date = new DateTime();
 	    $dates = Array();
 
@@ -42,11 +44,14 @@
 			$dates[$day]['day-full'] = $date->format('d');
 			$dates[$day]['date'] = $date->format('y-m-d');
 			$dates[$day]['status'] = 'out';
+			$dates[$day]['employees'] = getEmployees($dates[$day]['date'], $conn);
 			$dates[$day]['disabled'] = false;
 
+			// Check if the days are Sat or Sun to disabled them
 			if( $dates[$day]['day'] === 'Sat' || $dates[$day]['day'] === 'Sun' ) {
 
 				$dates[$day]['disabled'] = true;
+				$dates[$day]['status'] = 'weekend';
 
 			}
 
@@ -69,43 +74,31 @@
 	function getEmployees($date, $conn) {
 
 		$amountPeople = 0;
-		$amountActivePeople = 0;
 
-		$sql = 'SELECT count(*) as amount FROM users';
-	    $stmt = $conn->prepare($sql);
-	    
-	    //Execute query
-	    $stmt->execute();
-	    
-	    //Fetch the query.
-	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	    $amountPeople = $result['amount'];
-
-	    $sql = 'SELECT count(*) as amount FROM calendar WHERE calendarDate = :calendarDate';
+	    $sql = 'SELECT count(*) as amount FROM calendar WHERE calendarDate = :calendarDate AND status = :status';
 	    $stmt = $conn->prepare($sql);
 
 	    $stmt->bindValue(':calendarDate', $date);
-	    
+	    $stmt->bindValue(':status', 'office');
+
 	    //Execute query
 	    $stmt->execute();
 	    
 	    //Fetch the query.
 	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	    $amountActivePeople = $result['amount']; 
+	    $amountPeople = $result['amount']; 
 
-	    return $amountPeople - $amountActivePeople;
+	    return $amountPeople;
 
 	}
 
+	// Get all FLEX desks
 	function getDesks($conn) {
 
-		$amountFlexDesks = 0;
-		$amountFixedDesks = 0;
+		$amountAvailableDesks = 0;
 
 		$flexstatus = 'flex';
-		$fixedstatus = 'fixed';
 
 		$sql = 'SELECT count(*) as amount FROM desk WHERE status = :flexstatus';
 	    $stmt = $conn->prepare($sql);
@@ -118,25 +111,13 @@
 	    //Fetch the query.
 	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	    $amountFlexDesks = $result['amount'];
+	    $amountAvailableDesks = $result['amount'];
 
-	    $sql = 'SELECT count(*) as amount FROM desk WHERE status = :fixedstatus';
-	    $stmt = $conn->prepare($sql);
-
-	    $stmt->bindValue(':fixedstatus', $fixedstatus);
-	    
-	    //Execute query
-	    $stmt->execute();
-	    
-	    //Fetch the query.
-	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	    $amountFixedDesks = $result['amount'];
-
-	    return $amountFlexDesks + $amountFixedDesks - $amountFixedDesks;
+	    return $amountAvailableDesks;
 
 	}
 
+	// Formate date function
 	function formatDate($format, $year, $month, $day, $stamp) {
 
 		if(!$stamp) {
@@ -145,6 +126,7 @@
 				
 		} else {
 
+			// If time stamp is set (+1 month, -1 month)
 			return date($format, strtotime($year.'-'.$month.'-'.$day.$stamp));
 
 		}	
@@ -159,6 +141,7 @@
 
 		$currentMonth = date('y-m');
 
+		// Check if date is equal to current month
 		if($date === $currentMonth) {
 
 			return true;
@@ -173,6 +156,7 @@
 
 	function isCurrentDay($date) {
 
+		// Check if current day is equal to parameter date
 		if(getCurrentDay() === $date) {
 			
 			return true;
