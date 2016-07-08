@@ -1,5 +1,6 @@
 <?php if( isset($_SESSION['formError']) || isset($_SESSION['formMessage']) || isset($_SESSION['formWarning']) ) { ?>
 		
+		<!-- If the message is an error -->
 		<?php if(isset($_SESSION['formError'])) { ?>
 
 			<div class="message-box message-box--error js--message-box is--active">
@@ -16,6 +17,7 @@
 
 		<?php } ?>
 
+		<!-- If the message is success -->
 		<?php if(isset($_SESSION['formMessage'])) { ?>
 
 			<div class="message-box js--message-box is--active">
@@ -32,6 +34,7 @@
 
 		<?php } ?>
 
+		<!-- If the message is a warning -->
 		<?php if(isset($_SESSION['formWarning'])) { ?>
 
 			<div class="message-box message-box--warning js--message-box is--active">

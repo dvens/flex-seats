@@ -15,7 +15,8 @@
 		$emailaddress = (isset($_POST['emailaddress']) ? $_POST['emailaddress'] : null);
 		$surname = (isset($_POST['surname']) ? $_POST['surname'] : null);
 		$password = (isset($_POST['password']) ? $_POST['password'] : null);
-		$deskID = 0;
+		$deskType = (isset($_POST['desk']) ? $_POST['desk'] : null);
+		$gender = (isset($_POST['gender']) ? $_POST['gender'] : null);
 		$role = 'user';
 
 		$sql = 'SELECT * FROM users WHERE emailaddress = :emailaddress';
@@ -30,29 +31,46 @@
 	    //Fetch the query.
 	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	    if(empty($emailaddress) || empty($surname) || empty($password)) {
+	    if(empty($emailaddress) || empty($surname) || empty($password) || empty($deskType) || empty($gender) ) {
 	    	
-	    	$app -> setErrorMessage('Please fill in all required* fields');
-	    	return;
+	    	$app->setErrorMessage('Please fill in all required* fields');
+	    	header('Location: ?page=register');
+    		exit;
 
 	    }
 
 	    // Check if username exists
 	    if($result['emailaddress']){
 	       
-	       $app -> setErrorMessage('This email address: '. $emailaddress .' already exists');
-	       return;
+	       $app->setErrorMessage('This email address: '. $emailaddress .' already exists');
+	       header('Location: ?page=register');
+    		exit;
 
 		}
 
-		$sql = 'INSERT INTO users (emailaddress, surname, password, deskID, role) VALUES (:emailaddress, :surname, :password, :deskID, :role)';
+		if($deskType === 'fixed') {
+
+			$sql = 'INSERT INTO desk (status, userID) VALUES (:status, :userID)';
+	    	$stmt = $conn->prepare($sql);
+	    
+	    	//Bind the values;
+	   	 	$stmt->bindValue(':status', $deskType);
+	    	$stmt->bindValue(':userID', $emailaddress);
+	 	
+	    	// Fetch the query
+	    	$stmt->execute();
+
+		}
+
+		$sql = 'INSERT INTO users (emailaddress, surname, password, deskType, gender, role) VALUES (:emailaddress, :surname, :password, :deskType, :gender, :role)';
 	    $stmt = $conn->prepare($sql);
 	    
 	    //Bind the values;
 	    $stmt->bindValue(':emailaddress', $emailaddress);
 	    $stmt->bindValue(':surname', $surname);
 	    $stmt->bindValue(':password', $password);
-	    $stmt->bindValue(':deskID', $deskID);
+	    $stmt->bindValue(':deskType', $deskType);
+	    $stmt->bindValue(':gender', $gender);
 	    $stmt->bindValue(':role', $role);
 	 	
 	    // Fetch the query
@@ -60,7 +78,7 @@
 	    
 	    if($result){
 
-			$app -> setFormMessage('Thanks '. $surname .' for registering at Damco Seats.');
+			$app->setFormMessage('Thanks '. $surname .' for registering at Damco Seats.');
 	    	header('Location: ?page=login');
 	    	exit;
 

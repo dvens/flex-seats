@@ -3,18 +3,6 @@
 	<?php if($moduleType === 'register') { ?>
 		
 		<div class="form__group form__group--small">
-
-			<?php if(isset($_SESSION['formError'])) { ?>
-				
-				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']); ?></p>
-
-			<?php } ?>
-
-			<?php if(isset($_SESSION['formMessage'])) { ?>
-				
-				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']);?></p>
-
-			<?php } ?>
 			
 			<label for="emailaddress">Email address*</label>	
 			<input id="emailaddress" name="emailaddress" type="email">
@@ -25,6 +13,24 @@
 			<label for="password">Password*</label>	
 			<input id="password" name="password" type="password">
 
+			<label for="desk">Kind of desk*</label>	
+			<select name="desk" id="desk">
+				<option value="flex">flex desk</option>
+				<option value="fixed">fixed desk</option>
+			</select>
+
+			<label>Gender*</label>
+			
+			<div class="gender gender--male">
+				<input name="gender" id="man" type="radio" value="male">
+				<label for="man"></label>
+			</div>
+			
+			<div class="gender gender--female">
+				<input name="gender" id="woman" type="radio" value="female">
+				<label for="woman"></label>
+			</div>
+
 		</div>
 
 		<button name="register" type="submit" class="button--highlighted">register</button>	
@@ -34,18 +40,6 @@
 	<?php if($moduleType === 'login') { ?>
 		
 		<div class="form__group form__group--small">
-
-			<?php if(isset($_SESSION['formError'])) { ?>
-				
-				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']); ?></p>
-
-			<?php } ?>
-
-			<?php if(isset($_SESSION['formMessage'])) { ?>
-				
-				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']); ?></p>
-
-			<?php } ?>
 			
 			<label for="emailaddress">Email address</label>	
 			<input id="emailaddress" name="emailaddress" type="email">
@@ -62,18 +56,6 @@
 	<?php if($moduleType === 'validation') { ?>
 		
 		<div class="form__group form__group--small">
-
-			<?php if(isset($_SESSION['formError'])) { ?>
-				
-				<p class="form__message form__message--error"><?php echo $_SESSION['formError']; unset($_SESSION['formError']);?></p>
-
-			<?php } ?>
-
-			<?php if(isset($_SESSION['formMessage'])) { ?>
-				
-				<p class="form__message"><?php echo $_SESSION['formMessage']; unset($_SESSION['formMessage']);?></p>
-
-			<?php } ?>
 			
 			<label for="validation">Validation code</label>	
 			<input id="validation" name="validation" type="text">

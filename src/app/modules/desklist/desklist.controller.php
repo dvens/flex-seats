@@ -5,6 +5,7 @@
 	$desks = getDesks($conn);
 	$rooms = getRooms($conn);
 
+	// Delete desk functionality
 	if( isset($_POST['deleteDesk']) ) {
 
 		$deskID = (isset($_POST['deskid']) ? $_POST['deskid'] : null );
@@ -30,7 +31,7 @@
 		$rooms = (isset($_POST['rooms']) ? $_POST['rooms'] : '' );
 		$userID = 0;
 
-		// If there is no room selected
+		// Give an error message if there is no room selected
 		if( empty($rooms) ){
 
 			$_SESSION['formError'] = 'A desk has to have a room please create or select one.';
@@ -50,7 +51,7 @@
 	    // Fetch the query
 	    $result = $stmt->execute();
 
-	    // If the server returns a value
+	    // Return a succes message If the server returns a value
 	    if($result){
 
 			$_SESSION['formMessage'] = 'You\'ve succesfully added a desk';
@@ -61,7 +62,7 @@
 
 	}
 
-	// Return all the desks
+	// Return all the desks that are created
 	function getDesks($conn) {
 
 		$sql = 'SELECT * FROM desk';
@@ -77,6 +78,7 @@
 
 	}
 
+	// Return the amount of rooms created
 	function getRooms($conn) {
 
 		$sql = 'SELECT * FROM rooms';

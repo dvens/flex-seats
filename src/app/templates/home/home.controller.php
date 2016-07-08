@@ -17,10 +17,13 @@
 	function getAvailability($date, $conn) {
 
 		$amountAvailableDesks = 0;
+		$amountFixedDesks = 0;
 		$amountPeople = 0;
 
 		$flexstatus = 'flex';
+		$fixedstatus = 'fixed';
 
+		// Get flex desks
 		$sql = 'SELECT count(*) as amount FROM desk WHERE status = :flexstatus';
 	    $stmt = $conn->prepare($sql);
 
@@ -34,6 +37,19 @@
 
 	    $amountAvailableDesks = $result['amount'];
 
+	    // Get fixed desks
+	    $sql = 'SELECT count(*) as amount FROM desk WHERE status = :fixedstatus';
+	    $stmt = $conn->prepare($sql);
+	    $stmt->bindValue(':fixedstatus', $fixedstatus);
+	    
+	    //Execute query
+	    $stmt->execute();
+	    
+	    //Fetch the query.
+	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+	    $amountFixedDesks = $result['amount'];
+
+	    // Get amount of people booked for selected day
 	    $sql = 'SELECT count(*) as amount FROM calendar WHERE calendarDate = :calendarDate AND status = :status';
 	    $stmt = $conn->prepare($sql);
 
@@ -48,7 +64,7 @@
 
 	    $amountPeople = $result['amount']; 
 
-	    return $amountAvailableDesks - $amountPeople;
+	    return $amountAvailableDesks - $amountPeople - $amountFixedDesks;
 
 	}
 

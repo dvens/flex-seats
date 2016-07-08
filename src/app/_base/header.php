@@ -5,7 +5,16 @@
 		<?php if( (isset($_SESSION['user'])) ) { ?>
 			
 			<a href="?page=account" class="header__profile">
-				<img src="./images/user.jpg" alt="user">
+				
+				<?php if($_SESSION['gender'] === 'male') { ?>
+					
+					<img src="./images/man.svg" alt="user">
+
+				<?php } else { ?>
+
+					<img src="./images/women.svg" alt="user">
+
+				<?php } ?>
 				<p><?php echo $_SESSION['user']; ?></p> 
 			</a>
 

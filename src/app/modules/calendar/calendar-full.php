@@ -53,13 +53,15 @@
     <form action="?page=<?php echo $page; ?>" method="post">
 
 		<ol class="calendar__dates">
-
+			
+			<!-- for each day of the previous month echo empty list items -->
 			<?php for ($i=0; $i < $runningDays; $i++) { ?> 
 				
 				<li class="calendar__date is--hidden"></li>
 
 			<?php } ?>
-		
+			
+			<!-- for each day of the current month echo dates -->
 			<?php forEach($dates as $key => $date) {  ?>
 					
 				<li <?php echo ($date['disabled'] ? 'disabled' : ''); ?>  class="calendar__date calendar__date--<?php echo $date['status']; ?>">

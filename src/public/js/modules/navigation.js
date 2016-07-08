@@ -7,6 +7,8 @@ function Navigation(element) {
     var _navToggle = _element.querySelector('.header__navigation-toggle');
     var _navContainer = _element.querySelector('.header__navigation');
     var _navLinks = _element.querySelectorAll('[ajax-link]');
+    var _legend = document.querySelector('.legend');
+    var _legendToggle = document.querySelector('.legend__button');
     var _pageLoader = new Pageloader();
 
     function init() {
@@ -31,6 +33,17 @@ function Navigation(element) {
             e.preventDefault();
 
         });
+
+        if( _legend ) {
+
+            _legendToggle.addEventListener('click', function(e) {
+
+                this.classList.toggle('is--active');
+                _legend.classList.toggle('is--active');
+                e.preventDefault();
+            });
+
+        }
 
     }
 

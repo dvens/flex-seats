@@ -36,6 +36,22 @@
 				<label for="password">Password</label>	
 				<input id="password" name="password" type="password" value="<?php echo $userData['password'] ?>">
 
+				<label for="desk">Kind of desk*</label>	
+				<select name="desk" id="desk">
+
+					<?php if($userData['deskType'] === 'flex') { ?>
+						
+						<option selected value="flex">flex desk</option>
+						<option value="fixed">fixed desk</option>
+
+					<?php } else { ?>
+						
+						<option selected value="fixed">fixed desk</option>
+						<option value="flex">flex desk</option>
+
+					<?php } ?>
+				</select>
+
 			</div>
 
 			<button name="save" type="submit" class="button--highlighted">save</button>	

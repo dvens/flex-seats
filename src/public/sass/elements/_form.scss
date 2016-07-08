@@ -45,6 +45,38 @@
 		color: $color-red;
 		margin-bottom: 1em;
 	}
+	
+	.gender {
+		display: inline-block;
+		height: 2.625em;
+		position: relative;
+		width: 2.625em;
+
+		input[type="radio"] {
+			position: absolute;
+			opacity: 0;
+		}
+
+		label {
+			border-radius: 50%;
+			height: 100%;
+			width: 100%;
+		}
+		
+		input:checked + label {
+			border: 2px solid $color-blue;
+		}
+
+		&--male {
+			background: url('../images/man.svg') no-repeat center center;
+		}
+
+		&--female {
+			background: url('../images/women.svg') no-repeat center center;
+		}
+			
+	}
+	
 
 	input[type="text"],
 	input[type="email"],

@@ -80,24 +80,6 @@
 
 	}
 
-	function getUser($id ,$conn) {
-
-		$sql = 'SELECT * FROM users WHERE ID = :ID';
-	    $stmt = $conn->prepare($sql);
-	    
-	    //Bind the value
-	    $stmt->bindValue(':ID', $id);
-	    
-	    //Execute query
-	    $stmt->execute();
-	    
-	    //Fetch the query.
-	    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-	    return $result;
-
-	}
-
 	function getDesk($id, $conn) {
 
 		$sql = 'SELECT * FROM desk WHERE ID = :ID';

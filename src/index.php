@@ -26,6 +26,7 @@
 	
 	<div class="loader"></div>
 	<?php $app->loadModule('messagebox', null); ?>
+	<?php $app->loadModule('legend', null); ?>
 
 	<main ajax-container>
 		<?php $app->loadView($app); ?>

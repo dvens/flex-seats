@@ -29,6 +29,8 @@
     	if(!$code) {
     		
     		$app -> setErrorMessage("You've not entered the right validation code: ". $validationCode ." try again.");
+    		header('Location: ?page=validation');
+    		exit;
 
     	} else {
 
@@ -42,23 +44,3 @@
 	}
 
 ?>
-
-<!-- 
-		$sql = "INSERT INTO users (emailaddress, surname, password, deskID) VALUES (:emailaddress, :surname, :password, :deskID)";
-	    $stmt = $conn->prepare($sql);
-	    
-	    //Bind the values;
-	    $stmt->bindValue(':emailaddress', $emailaddress);
-	    $stmt->bindValue(':surname', $surname);
-	    $stmt->bindValue(':password', $password);
-	    $stmt->bindValue(':deskID', $deskID);
-	 	
-	    // Fetch the query
-	    $result = $stmt->execute();
-	    
-	    if($result){
-
-	    	$GLOBALS['formMessage'] = 'Thanks '. $surname .' for registering at Damco Seats';
-	    	header('Location: ?page=login');
-	    
-	    } -->
