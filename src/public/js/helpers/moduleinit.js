@@ -3,6 +3,7 @@ function moduleInit( selector, constructor ) {
 	var moduleElements = document.querySelectorAll( selector );
 	var moduleInstances = [];
 
+	// Initialize a new contructor for each element found in HTML.
 	for ( var i = 0; i < moduleElements.length; i++ ) {
 
 		var element = moduleElements[ i ];
@@ -11,6 +12,7 @@ function moduleInit( selector, constructor ) {
 		
 		element._isInitialized = true;
 
+		// Create a new constructor for each element and initialize them.
 		moduleInstances.push( new constructor( element ) );
 
 	}

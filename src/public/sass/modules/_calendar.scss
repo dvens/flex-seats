@@ -63,10 +63,13 @@
 	
 	.calendar__date {
 		background-color: $color-white;
+		border-left: 4px solid #E2E1E1;
 		box-shadow: 0px 1px 3px 2px rgba(0,0,0,0.04);
 		display: block; 
 		margin-bottom: 1em;
 		overflow: hidden;
+		opacity: 1;
+		visibility: visible;
 		position: relative;
 		transition: all .2s ease-in;
 		
@@ -84,9 +87,13 @@
 		&.is--active {	
 			
 			.calendar__content {
-				max-height: 100%;
+				max-height: 50em;
 				opacity: 1;
 				visibility: visible;
+			}
+
+			.calendar__desk-holder {
+				opacity: 0;
 			}
 
 		}
@@ -164,8 +171,10 @@
 
 	.calendar__desk-holder {
 		float: right;
+		opacity: 1;
 		padding-right: 1.5625rem;
 		padding-top: 1.3em;
+		transition: all .3s ease-in-out;
 
 		span,
 		svg {
@@ -217,7 +226,7 @@
 		color: $color-gray-dark;
 		opacity: 0;
 		text-align: center;
-		transition: all .2s ease-in;
+		transition: all 0.8s $animation-ease-inout-cubic;
 		visibility: hidden;
 		max-height: 0;
 
@@ -225,6 +234,10 @@
 			margin-top: 1.25em;
 			margin-bottom: 0.8125rem;
 		}
+	}
+
+	.calendar__content-new {
+		display: none;
 	}
 
 	.calendar__amount {

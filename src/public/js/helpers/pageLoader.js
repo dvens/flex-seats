@@ -41,12 +41,13 @@ function Pageloader() {
 
     _this.addLinks = function( links ) {
 
+        // Return if pushstate is not supported.
         if(!_isSupported) return;
 
         _links = links;
 
+        // Add a click handler forEach element that has the attribute [ajax-link]
         for( var i = 0; i < _links.length; i++ ) {
-
 
             _links[i].addEventListener('click', function(e) {
                 
@@ -77,9 +78,11 @@ function Pageloader() {
 
         if(_firstTime) return;
         
+        // Get url given by the a element.
         var _url = event.target.href || window.location.href;
         var _title = _url || 'home';
         
+        // Create a new div and place it under the old content container.
         _contentHolder = document.createElement('div');
         _contentHolder.classList.add('page-holder');
         _body.appendChild(_contentHolder);
@@ -96,6 +99,7 @@ function Pageloader() {
 
         var _div = document.createElement('div');
 
+        // Get page data and update the new contentholder with new data
         _loader.load('GET', page).then(function(response){
             
             _div.innerHTML = response;
@@ -111,6 +115,7 @@ function Pageloader() {
 
     function animateTransition() {
 
+        // Transition the main container
         _isTransitioning = true;
         _contentContainer.classList.add('is--transitioning');
         setNewCurrent();
@@ -121,6 +126,7 @@ function Pageloader() {
 
         _contentContainer.addEventListener('transitionend', setContent, false);
 
+        // When transition is endend update the old container with the new data and remove the newcontent container
         function setContent() {
 
             toggleLoader('hide');

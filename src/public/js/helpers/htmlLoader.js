@@ -3,31 +3,41 @@ function Loader() {
 	var _this = this;
 
 	_this.load = function(method, url, data, contentType) {
-
+		
 		return new Promise(function(resolve, reject) {
 
-			var xhr = new XMLHttpRequest();
-			xhr.open(method, url, true);
+			var _xhr = new XMLHttpRequest();
+			_xhr.open(method, url, true);
 
-			xhr.onload = function() {
+			_xhr.onload = function() {
 
 				if (this.status >= 200 && this.status < 300) {
 			        
-			   		resolve(xhr.response);
+			   		resolve(_xhr.response);
 			    
 			    } else {
 				    
 				    var error = {
 				    	status: this.status,
-				    	message: xhr.statusText
+				    	message: _xhr.statusText
 				    };
 
 				    reject(error);	
 				}
 
 			}	
-			
-			xhr.send();	
+
+			// Use xhr send data with 'POST' method
+			if(data) {
+
+				_xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				_xhr.send(data);
+
+			} else {
+
+				_xhr.send();
+
+			}
 		
 		});
 

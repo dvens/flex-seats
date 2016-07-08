@@ -40,7 +40,7 @@
 
 	</div>
 
-	<ul class="calendar__heading">
+	<ol class="calendar__heading">
 		
 		<?php foreach ($calendarHeadings as $heading) { ?>
 			
@@ -48,11 +48,11 @@
 
 		<?php } ?>
 
-	</ul>
+	</ol>
     
     <form action="?page=<?php echo $page; ?>" method="post">
 
-		<ul class="calendar__dates">
+		<ol class="calendar__dates">
 
 			<?php for ($i=0; $i < $runningDays; $i++) { ?> 
 				
@@ -77,7 +77,7 @@
 				</li>
 				
 			<?php } ?>
-		</ul>
+		</ol>
 			
 		<section class="grid__container form">
 			

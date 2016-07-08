@@ -79,7 +79,9 @@
 
 	    }
 
+	    $_SESSION['formMessage'] = 'You succesfully booked your day/days as not available.';
 	 	header('Location: ?page=calendar');
+	 	exit;
 
 	}
 
@@ -153,7 +155,9 @@
 
 	    }
 
+	 	$_SESSION['formMessage'] = 'You succesfully booked your day/days as working at the office.';
 	 	header('Location: ?page=calendar');
+	 	exit;
 
 	}
 
@@ -174,7 +178,9 @@
 	    	$stmt->execute();
 		}
 
+	 	$_SESSION['formMessage'] = 'You succesfully booked your day/days as working at home.';
 	 	header('Location: ?page=calendar');
+	 	exit;
 
 	}
 

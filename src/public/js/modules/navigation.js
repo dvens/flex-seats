@@ -13,9 +13,12 @@ function Navigation(element) {
 
     	initEvents();
 
+        // Do not initialize page loader if promises are not supported.
         if(typeof Promise !== 'undefined'){
+            
             _pageLoader.init('[ajax-container]');
             _pageLoader.addLinks(_navLinks);
+
         }
 
     }
