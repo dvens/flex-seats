@@ -2,6 +2,29 @@
 * Link to the Damco Web Application: [damco.dylanvens.com](http://damco.dylanvens.com)
 * To register an account use the validation code: #damco25
 
+## Important!!
+Since previous week I made a new iteration and changed the colors and the UI of my design. I choose new colors that are optimized for people with color blindness. You can find the new design and the old design below.
+
+### Things I changed
+* Changed the UI and colors
+* Deleted functionalities that were unnecessary
+* Changed HTML semantics (ul > ol)
+* Added an message box for feed back to the users.
+
+>New homepage
+
+![first load](screenshots/home.jpg)
+![first load](screenshots/normal-list.jpg)
+
+>New messages boxes
+
+![first load](screenshots/warning.jpg)
+![first load](screenshots/nav.jpg)
+
+>New calendar 
+
+![first load](screenshots/calendar.jpg)
+
 ## Introduction
 Damco Seats is an application where the employees of Damco can book their desks and are able to book their days to determine if they are at the office or not. 
 
