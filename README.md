@@ -11,6 +11,11 @@ Since previous week I made a new iteration and changed the colors and the UI of 
 * Changed HTML semantics (ul > ol)
 * Added an message box for feed back to the users.
 
+### Design decisions
+* On the second design I deleted the amount of employees coming because it is only important to the user to know how many seats there are available. 
+* Changed to homepage to a list view because the content was hidden behind a horizontal scrollbar and the user can see the data of multiple days now instead of just one. 
+* On the calendar page the user can book multiple days a head instea of clicking each day individually. 
+
 >New homepage
 
 ![first load](screenshots/home.jpg)
