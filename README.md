@@ -154,6 +154,7 @@ To call a template use the following function
     <?php $app->loadView($app); ?>
 ```
 
+# Old design
 ## Feature branches
 In this section I will tell you what you can find in each feature branch.
 
@@ -230,7 +231,7 @@ This branch contains the booking of desk the user can select multiple desks to b
 
 ### Branch: feature/pageloader
 I added a SPA page because the entire website is progressive enhanced, so I added some fancy page loading to the application. 
-The Javascript is build with CommonJS pattern. Then I added a custom moduleInitializer that is loading the module that you give to the initializer. 
+The Javascript is build with CommonJS pattern. 
 
 * How to setup a CommonJS module
 ```javascript
@@ -270,19 +271,6 @@ function Calendar(element) {
 }
 
 module.exports = Calendar;
-
-```
-
-* How to call a module with moduleInitializer (I prefix elements that have javascript added to them with .js--modulename).
-
-```javascript
-
-var moduleInitializer = require('./helpers/moduleinit');
-
-// Require modules
-var Calendar = require('./modules/calendar');
-
-moduleInitializer( '.js--calendar', Calendar );
 
 ```
 
