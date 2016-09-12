@@ -357,7 +357,6 @@ I did a speedtest on the homepage with a Regular 2G Throttle.
 ## TODO's and Features
 There are still somethings that can be improved or can be added to the application. Here is a list of things that I could add:
 - [ ] Add a calendar to the desk page so the user can book for a long period of time.
-- [ ] Add criticial CSS to each PHP file
 - [ ] Remove desks when a room is being removed
 - [ ] Add UI transition to the calendar (page transition when a new date is being loaded).
 - [ ] Add a service worker to cache certain files (css and javascript file).
@@ -365,4 +364,3 @@ There are still somethings that can be improved or can be added to the applicati
 
 ## Bug fixes
 - [ ] Bug fix the webfontloader
-- [ ] Test the calendar scrollTo (still a bit laggy)
